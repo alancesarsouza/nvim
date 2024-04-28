@@ -1,6 +1,2 @@
 print('\n-> init >>')
-require('remap')
-require('configurations')
--- require('plugins')
--- require('plugins')
--- require('remap')
+require('main')
