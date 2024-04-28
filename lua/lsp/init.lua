@@ -1,1 +1,3 @@
-print('OK - lsp')	
+print('\nAFTER -> lsp')	
+
+require('lsp.treesitter').after()
