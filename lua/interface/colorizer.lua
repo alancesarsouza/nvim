@@ -1,10 +1,14 @@
 local M = {}
 
-M.packer = { 'norcalli/nvim-colorizer.lua' }
+M.install = { 'norcalli/nvim-colorizer.lua' }
 
 M.after = function()
-  print("colorizer")
-  require'colorizer'.setup()
+  local status_ok, plugin = pcall(require, 'colorizer')
+  if not status_ok then
+    return
+  end
+
+  plugin.setup()
 end
 
 return M

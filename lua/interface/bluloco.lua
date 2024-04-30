@@ -1,22 +1,25 @@
 local M = {}
 
-M.packer = {
+M.install = {
   'uloco/bluloco.nvim',
   requires = { 'rktjmp/lush.nvim' },
 }
 
 M.after = function()
-  print("bluloco")
+  local status_ok, plugin = pcall(require, 'bluloco')
+  if not status_ok then
+    return
+  end
 
-  require("bluloco").setup({
-    style = "dark",               -- "auto" | "dark" | "light"
+  plugin.setup {
+    style = 'dark', -- "auto" | "dark" | "light"
     transparent = true,
     italics = true,
-    terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
-    guicursor   = true,
-  })
+    terminal = vim.fn.has 'gui_running' == 1, -- bluoco colors are enabled in gui terminals per default.
+    guicursor = true,
+  }
 
-  vim.cmd('colorscheme bluloco')
+  vim.cmd 'colorscheme bluloco'
 end
 
 return M

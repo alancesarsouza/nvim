@@ -1,10 +1,14 @@
 local M = {}
 
-M.packer = {'yamatsum/nvim-cursorline'}
+M.install = { 'yamatsum/nvim-cursorline' }
 
 M.after = function()
-  print('cursorline')
-  require('nvim-cursorline').setup {
+  local status_ok, plugin = pcall(require, 'nvim-cursorline')
+  if not status_ok then
+    return
+  end
+
+  plugin.setup {
     cursorline = {
       enable = true,
       timeout = 1000,
