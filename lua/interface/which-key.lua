@@ -1,9 +1,7 @@
 local d = require 'main.descriptions'
 local M = {}
 
-M.install = {
-  'folke/which-key.nvim',
-}
+M.install = { 'folke/which-key.nvim' }
 
 M.after = function()
   local status_ok, wk = pcall(require, 'which-key')

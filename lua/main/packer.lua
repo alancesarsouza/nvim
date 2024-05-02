@@ -39,7 +39,8 @@ packer.init {
   },
 }
 
--- Install your plugins here
+-- MINI.NVIM - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
+
 return packer.startup(function(use)
   -- Interface plugins
   use(require('interface.bluloco').install)
@@ -47,9 +48,11 @@ return packer.startup(function(use)
   use(require('interface.colorizer').install)
   use(require('interface.cursorline').install)
   use(require('interface.focus').install)
+  use(require('interface.indent').install)
   use(require('interface.lualine').install)
   use(require('interface.noice').install)
   use(require('interface.nvim-tree').install)
+  use(require('interface.scrollbar').install)
   use(require('interface.which-key').install)
 
   -- LSP plugins
@@ -58,16 +61,17 @@ return packer.startup(function(use)
   use(require('lsp.lint').install)
   use(require('lsp.lspconfig').install)
   use(require('lsp.mason').install)
-  -- use(require("lsp.treesitter").install)
+  use(require('lsp.treesitter').install)
 
   -- -- Other plugins
-  use(require('plugins.no-config').install)
+  use(require('plugins.test-install').install)
+
   use(require('plugins.autoclose').install)
-  -- use(require("plugins.autotag").install)
   use(require('plugins.codeium').install)
   use(require('plugins.comment').install)
+  use(require('plugins.diffview').install)
   use(require('plugins.git-blame').install)
-  -- use(require("plugins.gitsigns").install)
+  use(require('plugins.gitsigns').install)
   use(require('plugins.impatient').install)
   use(require('plugins.surround').install)
   use(require('plugins.telescope').install)

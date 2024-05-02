@@ -4,8 +4,6 @@ local M = {}
 M.install = {
   'nvim-tree/nvim-tree.lua',
   requires = { 'nvim-tree/nvim-web-devicons' },
-
-  config = function() end,
 }
 
 M.after = function()

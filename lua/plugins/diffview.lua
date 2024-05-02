@@ -1,9 +1,7 @@
 local d = require 'main.descriptions'
 local M = {}
 
-M.install = {
-  'sindrets/diffview.nvim',
-}
+M.install = { 'sindrets/diffview.nvim' }
 
 M.after = function()
   -- Diffview - https://github.com/sindrets/diffview.nvim?tab=readme-ov-file#usage
