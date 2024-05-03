@@ -3,9 +3,7 @@ local M = {}
 M.install = {
   'nvim-treesitter/nvim-treesitter',
   event = 'VimEnter',
-  requires = {
-    'HiPhish/rainbow-delimiters.nvim',
-  },
+  requires = { 'HiPhish/rainbow-delimiters.nvim' },
 
   setup = function()
     local status_ok, plugin = pcall(require, 'nvim-treesitter.configs')

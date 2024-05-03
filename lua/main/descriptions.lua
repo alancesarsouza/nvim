@@ -14,9 +14,11 @@ return {
   wj = 'Go to window below',
   wk = 'Go to window above',
   wl = 'Go to window on the right',
+  q = 'Delete buffer',
 
-  f = 'Telescope options',
   -- telescope
+  f = 'Telescope options',
+
   ff = 'Find file',
   fg = 'Grep in files',
   fb = 'Find buffer',

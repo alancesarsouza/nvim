@@ -1,6 +1,5 @@
+local r = require 'main.rules'
 local M = {}
-
-local ignore_buftypes = { 'nofile', 'prompt', 'popup', 'NvimTree' }
 
 M.install = {
   'nvim-lualine/lualine.nvim',
@@ -23,7 +22,7 @@ M.after = function()
         statusline = {},
         winbar = {},
       },
-      ignore_focus = ignore_buftypes,
+      ignore_focus = r.ignore_buffers.lualine,
       always_divide_middle = true,
       globalstatus = false,
       refresh = {

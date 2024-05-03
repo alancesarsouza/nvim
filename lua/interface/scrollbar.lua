@@ -1,3 +1,4 @@
+local r = require 'main.rules'
 local t = require 'main.theme'
 local M = {}
 
@@ -20,7 +21,7 @@ M.after = function()
     return
   end
 
-  gitsigns.setup()
+  gitsigns.setup {}
   search.setup()
 
   hlslens.setup()
@@ -54,14 +55,7 @@ M.after = function()
       Warn = { text = { '─', '━' }, priority = 3, color = t.status.warn, highlight = 'DiagnosticVirtualTextWarn' },
     },
     excluded_buftypes = { 'terminal' },
-    excluded_filetypes = {
-      'cmp_docs',
-      'cmp_menu',
-      'noice',
-      'prompt',
-      'TelescopePrompt',
-      'NvimTree',
-    },
+    excluded_filetypes = r.ignore_files.scrollbar,
     handlers = {
       cursor = true,
       diagnostic = true,

@@ -2,11 +2,13 @@
 local opt = vim.opt
 
 -- Global
+vim.g.autoformat = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-vim.g.autoformat = true
 vim.g.markdown_recommended_style = 0 -- Fix markdown indentation settings
 vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
+
+-- Buffer Options
 vim.bo.autoread = true
 
 -- Options
@@ -45,7 +47,7 @@ opt.shiftwidth = 2 -- Size of an indent
 opt.shortmess:append { W = true, I = true, c = true, C = true }
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
-opt.signcolumn = 'yes' -- Always show the signcolumn, otherwise it would shift the text each time
+opt.signcolumn = 'no' -- Always show the signcolumn, otherwise it would shift the text each time // testing no was yes
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.softtabstop = 2
@@ -70,7 +72,32 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_set_hl(0, 'TestAlan', { fg = '#FF00FF' })
+
 -- Testing
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
+    },
+    linehl = {
+      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
+    },
+  },
+}
+
 if vim.fn.has 'nvim-0.10' == 1 then
   opt.smoothscroll = true
 end

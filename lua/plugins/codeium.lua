@@ -2,10 +2,7 @@ local M = {}
 
 M.install = {
   'Exafunction/codeium.nvim',
-  requires = {
-    'nvim-lua/plenary.nvim',
-    'hrsh7th/nvim-cmp',
-  },
+  requires = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' },
 }
 
 M.after = function()

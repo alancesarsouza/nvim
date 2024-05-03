@@ -7,38 +7,46 @@ M.on_attach = function(_client, bufnr)
   })
 end
 
-M.install = {
-  'stevearc/conform.nvim',
-}
+M.install = { 'stevearc/conform.nvim' }
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'conform')
   if not status_ok then
     return
   end
+  vim.o.formatexpr = 'EslintFixAll'
 
   plugin.setup {
     formatters_by_ft = {
       -- file = { "MustRun", "MustRun" }
       -- file = { { "OptionalRun" }, "MustRun" }
       -- file = { { "OptionalRun", "OptionalRun" } }
+
+      lua = { 'stylua' },
+
+      javascript = { { 'prettierd' }, 'eslint_d' },
+      javascriptreact = { { 'prettierd' }, 'eslint_d' },
+      typescript = { { 'prettierd' }, 'eslint_d' },
+      typescriptreact = { { 'prettierd' }, 'eslint_d' },
+
       css = { 'prettierd' },
       graphql = { 'prettierd' },
       html = { 'prettierd' },
-      javascript = { { 'prettierd' } },
-      javascriptreact = { { 'prettierd' } },
       json = { 'prettierd' },
-      lua = { 'stylua' },
       markdown = { 'prettierd' },
-      typescript = { { 'prettierd' } },
-      typescriptreact = { { 'prettierd' } },
       yaml = { 'prettierd' },
     },
 
     format_on_save = {
-      timeout_ms = 500, -- force fast check, this must run before LSP
       async = false,
       lsp_fallback = false,
+      timeout_ms = 1000, -- fast format prettierd
+    },
+
+    format_after_save = {
+      async = true,
+      lsp_fallback = true,
+      timeout_ms = 2000, -- slow format eslint_d (required)
     },
   }
 end

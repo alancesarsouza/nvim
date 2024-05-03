@@ -1,3 +1,13 @@
+local colors = {
+  blue = '#61AFEF',
+  cyan = '#56B6C2',
+  green = '#98C379',
+  orange = '#D19A66',
+  red = '#E06C75',
+  violet = '#C678DD',
+  yellow = '#E5C07B',
+}
+
 return {
   bg = '#000000',
   fg = '#ffffff',
@@ -24,13 +34,5 @@ return {
     selected = '#ffffff',
     warn = '#ffdd00',
   },
-  colors = {
-    blue = '#61AFEF',
-    cyan = '#56B6C2',
-    green = '#98C379',
-    orange = '#D19A66',
-    red = '#E06C75',
-    violet = '#C678DD',
-    yellow = '#E5C07B',
-  },
+  colors = colors,
 }

@@ -5,7 +5,6 @@ local M = {}
 M.install = { 'neovim/nvim-lspconfig' }
 
 M.after = function()
-  -- mason-lspconfig
   local status_ok, lspconfig = pcall(require, 'lspconfig')
   if not status_ok then
     return
@@ -21,9 +20,7 @@ M.after = function()
   lspconfig.lua_ls.setup {
     settings = {
       Lua = {
-        diagnostics = {
-          globals = { 'vim' },
-        },
+        diagnostics = { globals = { 'vim' } },
       },
     },
   }
