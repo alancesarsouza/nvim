@@ -65,15 +65,6 @@ opt.wildmode = 'longest:full,full' -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
--- highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-vim.api.nvim_set_hl(0, 'TestAlan', { fg = '#FF00FF' })
-
 -- Testing
 vim.diagnostic.config {
   signs = {
@@ -84,7 +75,7 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.HINT] = '',
     },
     linehl = {
-      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+      [vim.diagnostic.severity.ERROR] = 'Alan',
       [vim.diagnostic.severity.WARN] = '',
       [vim.diagnostic.severity.INFO] = '',
       [vim.diagnostic.severity.HINT] = '',

@@ -43,17 +43,16 @@ packer.init {
 
 return packer.startup(function(use)
   -- Interface plugins
-  use(require('interface.bluloco').install)
-  use(require('interface.bufferline').install)
-  use(require('interface.colorizer').install)
-  use(require('interface.cursorline').install)
-  use(require('interface.focus').install)
+  use(require('interface.cover').install)
+  use(require('interface.theme').install)
+  use(require('interface.tabs').install)
+  use(require('interface.cursor').install)
   use(require('interface.indent').install)
-  use(require('interface.lualine').install)
-  use(require('interface.noice').install)
-  use(require('interface.nvim-tree').install)
-  use(require('interface.scrollbar').install)
-  use(require('interface.which-key').install)
+  use(require('interface.bottom-bar').install)
+  use(require('interface.notifications').install)
+  use(require('interface.side-menu').install)
+  use(require('interface.scroll-bar').install)
+  use(require('interface.git-diff').install)
 
   -- LSP plugins
   use(require('lsp.cmp').install)
@@ -68,15 +67,17 @@ return packer.startup(function(use)
 
   use(require('plugins.autoclose').install)
   use(require('plugins.codeium').install)
+  use(require('plugins.colorizer').install)
   use(require('plugins.comment').install)
-  use(require('plugins.diffview').install)
   use(require('plugins.git-blame').install)
   use(require('plugins.gitsigns').install)
   use(require('plugins.illuminate').install)
   use(require('plugins.impatient').install)
   use(require('plugins.surround').install)
   use(require('plugins.telescope').install)
+  use(require('plugins.focus').install)
   use(require('plugins.toggleterm').install)
+  use(require('plugins.which-key').install)
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

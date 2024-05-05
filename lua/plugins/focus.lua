@@ -1,4 +1,3 @@
-local r = require 'main.rules'
 local M = {}
 
 M.install = { 'nvim-focus/focus.nvim' }
@@ -8,32 +7,6 @@ M.after = function()
   if not status_ok then
     return
   end
-
-  local augroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
-
-  vim.api.nvim_create_autocmd('WinEnter', {
-    group = augroup,
-    callback = function(_)
-      if vim.tbl_contains(r.ignore_buffers.focus, vim.bo.buftype) then
-        vim.w.focus_disable = true
-      else
-        vim.w.focus_disable = false
-      end
-    end,
-    desc = 'Disable focus autoresize for BufType',
-  })
-
-  vim.api.nvim_create_autocmd('FileType', {
-    group = augroup,
-    callback = function(_)
-      if vim.tbl_contains(r.ignore_files.focus, vim.bo.filetype) then
-        vim.b.focus_disable = true
-      else
-        vim.b.focus_disable = false
-      end
-    end,
-    desc = 'Disable focus autoresize for FileType',
-  })
 
   plugin.setup {
     autoresize = {

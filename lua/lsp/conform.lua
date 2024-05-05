@@ -1,10 +1,11 @@
 local M = {}
 
 M.on_attach = function(_client, bufnr)
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    buffer = bufnr,
-    command = 'EslintFixAll',
-  })
+  -- da erro ao salvar outros arquivos
+  -- vim.api.nvim_create_autocmd('BufWritePre', {
+  --   buffer = bufnr,
+  --   command = 'EslintFixAll',
+  -- })
 end
 
 M.install = { 'stevearc/conform.nvim' }

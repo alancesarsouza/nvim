@@ -1,4 +1,13 @@
 local M = {}
+local all = {
+  'NvimTree',
+  'NvimTree_1',
+  'NvimTree_2',
+  'NvimTree_3',
+  'nofile',
+  'popup',
+  'prompt',
+}
 
 M.ignore_files = {
   focus = {
@@ -13,32 +22,12 @@ M.ignore_files = {
     'TelescopePrompt',
     'NvimTree',
   },
-  illuminate = {
-    'dirbuf',
-    'dirvish',
-    'fugitive',
-    'NvimTree',
-  },
+  illuminate = all,
 }
+
 M.ignore_buffers = {
-  focus = {
-    'NvimTree',
-    'NvimTree_1',
-    'NvimTree_2',
-    'NvimTree_3',
-    'nofile',
-    'popup',
-    'prompt',
-  },
-  lualine = {
-    'NvimTree',
-    'NvimTree_1',
-    'NvimTree_2',
-    'NvimTree_3',
-    'nofile',
-    'popup',
-    'prompt',
-  },
+  focus = all,
+  lualine = all,
 }
 
 return M

@@ -1,14 +1,14 @@
-local t = require 'main.theme'
+local hl = require 'main.register_hl'
 local M = {}
 
 local highlight = {
   'RainbowRed',
-  'RainbowYellow',
-  'RainbowBlue',
   'RainbowOrange',
+  'RainbowYellow',
   'RainbowGreen',
-  'RainbowViolet',
+  'RainbowBlue',
   'RainbowCyan',
+  'RainbowViolet',
 }
 
 M.install = {
@@ -25,17 +25,9 @@ M.after = function()
     return
   end
 
-  hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, 'RainbowRed', { fg = t.colors.red })
-    vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = t.colors.yellow })
-    vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = t.colors.blue })
-    vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = t.colors.orange })
-    vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = t.colors.green })
-    vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = t.colors.violet })
-    vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = t.colors.cyan })
-  end)
+  hooks.register(hooks.type.HIGHLIGHT_SETUP, hl.register_rainbow)
 
-  vim.g.rainbow_delimiters = { highlight = highlight }
+  vim.g.Theme_delimiters = { highlight = highlight }
   ibl.setup {
     indent = { highlight = highlight, char = '' },
     whitespace = {

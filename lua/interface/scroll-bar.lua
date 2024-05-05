@@ -1,5 +1,5 @@
 local r = require 'main.rules'
-local t = require 'main.theme'
+local c = require 'main.colors'
 local M = {}
 
 M.install = {
@@ -33,26 +33,27 @@ M.after = function()
     throttle_ms = 100,
     handle = {
       text = ' ',
-      blend = 80, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
-      color = t.secondary,
-      highlight = 'CursorColumn',
+      blend = 80, -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparenc. Defaults to 30.
+      color = c.secondary,
+      -- highlight = 'CursorColumn',
+      highlight = 'AlphaLogo',
     },
     marks = {
-      Cursor = { text = '◁', priority = 0, color = t.cursor.fg },
+      Cursor = { text = '◁', priority = 0, color = c.cursor.fg },
       Error = {
         text = { '─', '━' },
         priority = 2,
-        -- color = t.status.error,
+        color = c.status.error,
         highlight = 'DiagnosticVirtualTextError',
       },
-      GitAdd = { text = '┥', priority = 7, color = t.git.add, highlight = 'GitSignsAdd' },
-      GitChange = { text = '┤', priority = 7, color = t.git.change, highlight = 'GitSignsChange' },
-      GitDelete = { text = '│', priority = 7, color = t.git.delete, highlight = 'GitSignsDelete' },
-      Hint = { text = { '─', '━' }, priority = 5, color = t.status.hint, highlight = 'DiagnosticVirtualTextHint' },
-      Info = { text = { '─', '━' }, color = t.status.info },
-      Misc = { text = { '─', '━' }, priority = 6, color = t.status.misc, highlight = 'Normal' },
-      Search = { text = { '─', '━' }, priority = 1, color = t.status.search, highlight = 'Search' },
-      Warn = { text = { '─', '━' }, priority = 3, color = t.status.warn, highlight = 'DiagnosticVirtualTextWarn' },
+      GitAdd = { text = '┥', priority = 7, color = c.git.add, highlight = 'GitSignsAdd' },
+      GitChange = { text = '┤', priority = 7, color = c.git.change, highlight = 'GitSignsChange' },
+      GitDelete = { text = '│', priority = 7, color = c.git.delete, highlight = 'GitSignsDelete' },
+      Hint = { text = { '─', '━' }, priority = 5, color = c.status.hint, highlight = 'DiagnosticVirtualTextHint' },
+      Info = { text = { '─', '━' }, color = c.status.info },
+      Misc = { text = { '─', '━' }, priority = 6, color = c.status.misc, highlight = 'Normal' },
+      Search = { text = { '─', '━' }, priority = 1, color = c.status.search, highlight = 'Search' },
+      Warn = { text = { '─', '━' }, priority = 3, color = c.status.warn, highlight = 'DiagnosticVirtualTextWarn' },
     },
     excluded_buftypes = { 'terminal' },
     excluded_filetypes = r.ignore_files.scrollbar,

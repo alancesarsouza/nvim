@@ -21,7 +21,11 @@ M.after = function()
   vim.keymap.set('n', '<leader>e', '<Cmd> NvimTreeToggle <CR>', { desc = d.menu })
   vim.keymap.set('n', '<leader>c', '<Cmd> NvimTreeCollapse <CR>', { desc = d.collapse })
 
-  plugin.setup { view = { width = 35 } }
+  plugin.setup {
+    view = {
+      width = 35,
+    },
+  }
 end
 
 return M

@@ -25,7 +25,7 @@ M.after = function()
     min_count_to_highlight = 2,
     -- case_insensitive_regex: sets regex case sensitivity
     case_insensitive_regex = true,
-    filetypes_denylist = r.ignore_files.inlluminate,
+    filetypes_denylist = r.ignore_files.illuminate,
   }
 end
 

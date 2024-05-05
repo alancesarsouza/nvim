@@ -11,7 +11,7 @@ M.after = function()
     return
   end
 
-  plugin.setup {}
+  -- plugin.setup {}
 end
 
 return M

@@ -11,9 +11,9 @@ M.after = function()
   end
 
   plugin.setup {
-    keys = {
-      ['>'] = { escape = false, close = false, pair = '<>', disabled_filetypes = {} },
-    },
+    -- keys = {
+    --   ['>'] = { escape = false, close = false, pair = '<>', disabled_filetypes = {} },
+    -- },
   }
 end
 
