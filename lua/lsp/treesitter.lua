@@ -26,7 +26,7 @@ M.install = {
         'csv',
         'html',
         'javascript',
-        'jsdoc',
+        -- 'jsdoc', -- has tarball error
         'json',
         'lua',
         'json',
