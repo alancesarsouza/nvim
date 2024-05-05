@@ -51,7 +51,7 @@ local logo = {
 
 M.install = {
   'goolord/alpha-nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  requires = { 'nvim-tree/nvim-web-devicons' },
 }
 
 M.after = function()
