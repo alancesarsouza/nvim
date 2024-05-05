@@ -35,11 +35,3 @@ autocommand('FileType', {
   end,
   desc = 'Disable focus autoresize for FileType',
 })
-
--- test
-vim.cmd [[
-    :hi      NvimTreeExecFile    guifg=#ffa0a0
-    :hi      NvimTreeSpecialFile guifg=#ff80ff gui=underline
-    :hi      NvimTreeSymlink     guifg=Yellow  gui=italic
-    :hi link NvimTreeImageFile   Title
-]]

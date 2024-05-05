@@ -16,12 +16,12 @@ M.install = {
       popupmenu = { kind_icons = false },
       cmdline = {
         format = {
-          cmdline = { icon = '>' },
-          search_down = { icon = '🔍⌄' },
-          search_up = { icon = '🔍⌃' },
-          filter = { icon = '$' },
-          lua = { icon = '☾' },
-          help = { icon = '?' },
+          cmdline = { icon = '⮞' },
+          search_down = { icon = '🔍▽' },
+          search_up = { icon = '🔍△' },
+          filter = { icon = '＄⮚' },
+          lua = { icon = ' ⮚' },
+          help = { icon = '？⮚' },
         },
       },
       views = {

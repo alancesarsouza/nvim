@@ -13,6 +13,8 @@ M.ignore_files = {
   focus = {
     'neo-tree',
     'NvimTree',
+    'DiffviewFiles',
+    'DiffviewFileHistory',
   },
   scrollbar = {
     'cmp_docs',

@@ -35,6 +35,8 @@ require('plugins.telescope').after()
 require('plugins.focus').after()
 require('plugins.toggleterm').after()
 
+require('plugins.virtual-text').after()
+
 -- Instaces !! REQUIRE RUN AFTER ALL !!
 require 'main.autocomand'
 require('main.register_hl').highlight()

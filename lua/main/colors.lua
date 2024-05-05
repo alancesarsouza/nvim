@@ -18,26 +18,27 @@ local colors = {
 local git = { add = '#88ff88', change = '#ffff88', delete = '#ff8888' }
 
 local rainbow = {
-  rainbowRed = '#ff8888',
-  rainbowOrange = '#ffcc88',
-  rainbowYellow = '#ffff88',
-  rainbowGreen = '#88ffaa',
-  rainbowBlue = '#88ddff',
-  rainbowCyan = '#aa88ff',
-  rainbowViolet = '#ff88cc',
+  rainbowRed = '#ff4444',
+  rainbowOrange = '#ffcc44',
+  rainbowYellow = '#ffff44',
+  rainbowGreen = '#44ffaa',
+  rainbowBlue = '#44ddff',
+  rainbowCyan = '#aa44ff',
+  rainbowViolet = '#ff44cc',
 }
 
 local status = {
-  error = '#ff2200',
   focus = '#aaaaaa',
   highlight = '#dddddd',
-  hint = '#ff2200',
   hover = '#444444',
-  info = '#00ffff',
-  misc = '#ff2200',
   search = '#ffffff',
   selected = '#ffffff',
-  warn = '#ffdd00',
+
+  error = '#ff8888',
+  hint = '#88ffff',
+  info = '#88ff88',
+  misc = '#ff2200',
+  warn = '#ffff44',
 }
 
 return {

@@ -66,28 +66,28 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 -- Testing
-vim.diagnostic.config {
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
-    },
-    linehl = {
-      [vim.diagnostic.severity.ERROR] = 'Alan',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
-    },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
-    },
-  },
-}
+-- vim.diagnostic.config {
+--   signs = {
+--     text = {
+--       [vim.diagnostic.severity.ERROR] = '',
+--       [vim.diagnostic.severity.WARN] = '',
+--       [vim.diagnostic.severity.INFO] = '',
+--       [vim.diagnostic.severity.HINT] = '',
+--     },
+--     linehl = {
+--       [vim.diagnostic.severity.ERROR] = '',
+--       [vim.diagnostic.severity.WARN] = '',
+--       [vim.diagnostic.severity.INFO] = '',
+--       [vim.diagnostic.severity.HINT] = '',
+--     },
+--     numhl = {
+--       [vim.diagnostic.severity.ERROR] = '',
+--       [vim.diagnostic.severity.WARN] = '',
+--       [vim.diagnostic.severity.INFO] = '',
+--       [vim.diagnostic.severity.HINT] = '',
+--     },
+--   },
+-- }
 
 if vim.fn.has 'nvim-0.10' == 1 then
   opt.smoothscroll = true

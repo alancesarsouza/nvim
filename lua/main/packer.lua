@@ -78,6 +78,9 @@ return packer.startup(function(use)
   use(require('plugins.focus').install)
   use(require('plugins.toggleterm').install)
   use(require('plugins.which-key').install)
+  use(require('plugins.virtual-text').install)
+
+  -- use(require('plugins.virtual-text').install)
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
