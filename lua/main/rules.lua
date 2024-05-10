@@ -1,4 +1,5 @@
 local M = {}
+
 local all = {
   'alpha',
   'NvimTree',

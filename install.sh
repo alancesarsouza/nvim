@@ -1,7 +1,5 @@
 #! /bin/bash
 
-## TESTAR REMOVER TODAS AS INSTALACOES
+echo "-> Let's execute routines before run nvim"
 
-# Manual install packer
-# ls ~/.local/share/nvim/site/pack/packer || git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-#   ~/.local/share/nvim/site/pack/packer/start/packer.nvim && nvim ~/.config/nvim
+# ADD HERE YOUR ROUTINES
