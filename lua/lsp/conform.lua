@@ -2,10 +2,10 @@ local M = {}
 
 M.on_attach = function(_client, bufnr)
   -- da erro ao salvar outros arquivos
-  -- vim.api.nvim_create_autocmd('BufWritePre', {
-  --   buffer = bufnr,
-  --   command = 'EslintFixAll',
-  -- })
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    buffer = bufnr,
+    command = 'EslintFixAll',
+  })
 end
 
 M.install = { 'stevearc/conform.nvim' }
@@ -25,10 +25,10 @@ M.after = function()
 
       lua = { 'stylua' },
 
-      javascript = { { 'prettierd' }, 'eslint_d' },
-      javascriptreact = { { 'prettierd' }, 'eslint_d' },
-      typescript = { { 'prettierd' }, 'eslint_d' },
-      typescriptreact = { { 'prettierd' }, 'eslint_d' },
+      javascript = { { 'prettierd' }, { 'eslint_d' } },
+      javascriptreact = { { 'prettierd' }, { 'eslint_d' } },
+      typescript = { { 'prettierd' }, { 'eslint_d' } },
+      typescriptreact = { { 'prettierd' }, { 'eslint_d' } },
 
       css = { 'prettierd' },
       graphql = { 'prettierd' },

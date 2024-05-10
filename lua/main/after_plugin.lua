@@ -21,7 +21,7 @@ require('lsp.treesitter').after()
 -- -- Other plugins
 require('plugins.test-install').after()
 
-require('plugins.autoclose').after()
+require('plugins.autopair').after()
 require('plugins.which-key').after()
 require('plugins.codeium').after()
 require('plugins.colorizer').after()

@@ -9,17 +9,11 @@ M.after = function()
   end
 
   plugin.setup {
-    max_width = 80, -- The maximum width of the diagnostic messages
-    max_height = 20, -- the maximum height per diagnostics
-    severity_colors = { -- The highlight groups to use for each diagnostic severity level
-      error = 'DiagflowStatusError',
-      warning = 'DiagflowStatusWarning',
-      info = 'DiagflowStatusInfo',
-      hint = 'DiagflowStatusHint',
-    },
-    gap_size = 2,
+    -- max_width = 80, -- The maximum width of the diagnostic messages
+    -- max_height = 20, -- the maximum height per diagnostics
+    -- gap_size = 2,
     scope = 'cursor', -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
-    text_align = 'left', -- 'left', 'right'
+    text_align = 'right', -- 'left', 'right'
     placement = 'top', -- 'top', 'inline'
     inline_padding_left = 1, -- the padding left when the placement is inline
     -- update_event = { 'DiagnosticChanged', 'BufReadPost' }, -- the event that updates the diagnostics cache

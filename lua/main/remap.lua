@@ -2,6 +2,7 @@ local d = require 'main.descriptions'
 vim.g.mapleader = ' '
 
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-z>', '<Cmd> u <CR>', { desc = d.u })
+vim.keymap.set({ 'n', 'v', 'i' }, '<S->', '<Cmd> undo <CR>', { desc = d.u })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-s>', '<Cmd> w <CR>', { desc = d.w })
 
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

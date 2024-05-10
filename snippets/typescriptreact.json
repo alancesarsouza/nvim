@@ -1,5 +1,15 @@
 {
-  "Action Buttons": {
+  "Console Log": {
+    "prefix": "cl",
+    "description": "add console.log()",
+    "body": ["console.log($1)"]
+  },
+  "Create const": {
+    "prefix": "cons",
+    "description": "add variable declaration",
+    "body": ["const $1 = '$1';"]
+  },
+  "Form Buttons": {
     "prefix": "ac",
     "description": "action buttons: custom",
     "body": [
@@ -17,7 +27,7 @@
       "export function $1(props: $1Props){",
       "\treturn (",
       "\t\t<div>",
-      "\t\t\t$3",
+      "\t\t\t$1",
       "\t\t</div>",
       "\t)",
       "}"

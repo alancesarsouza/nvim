@@ -65,7 +65,7 @@ return packer.startup(function(use)
   -- -- Other plugins
   use(require('plugins.test-install').install)
 
-  use(require('plugins.autoclose').install)
+  use(require('plugins.autopair').install)
   use(require('plugins.codeium').install)
   use(require('plugins.colorizer').install)
   use(require('plugins.comment').install)

@@ -9,9 +9,16 @@ M.install = {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
-
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
+
+    {
+      'L3MON4D3/LuaSnip',
+      tag = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      -- install jsregexp (optional!:).
+      run = 'make install_jsregexp',
+    }, -- snippet engine
+    'saadparwaiz1/cmp_luasnip', -- for autocompletion
   },
 }
 
@@ -26,7 +33,7 @@ M.after = function()
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
         vim.fn['vsnip#anonymous'](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
@@ -43,8 +50,8 @@ M.after = function()
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
+      { name = 'luasnip' }, -- For luasnip users.
       { name = 'codeium' },
-      -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -79,6 +86,11 @@ M.after = function()
     }),
     matching = { disallow_symbol_nonprefix_matching = false },
   })
+
+  -- snippets
+  require('luasnip.loaders.from_vscode').lazy_load {
+    paths = { '~/.config/nvim/snippets' },
+  }
 end
 
 return M

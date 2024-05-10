@@ -29,7 +29,6 @@ M.install = {
         -- 'jsdoc', -- has tarball error
         'json',
         'lua',
-        'json',
         'lua',
         'markdown',
         'regex',
@@ -83,7 +82,7 @@ M.install = {
       highlight = {
         enable = true,
         use_languagetree = true,
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true, -- testing true
       },
     }
   end,

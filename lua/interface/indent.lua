@@ -25,7 +25,9 @@ M.after = function()
     return
   end
 
-  hooks.register(hooks.type.HIGHLIGHT_SETUP, hl.register_rainbow)
+  hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    hl.register_rainbow()
+  end)
 
   vim.g.Theme_delimiters = { highlight = highlight }
   ibl.setup {

@@ -8,21 +8,11 @@ M.install = {
     'rcarriga/nvim-notify',
     'hrsh7th/nvim-cmp',
   },
-
   config = function()
     require('noice').setup {
-      inc_rename = { cmdline = { format = { IncRename = { icon = '⟳' } } } },
-      format = { level = { icons = { error = '✖', warn = '▼', info = '●' } } },
-      popupmenu = { kind_icons = false },
-      cmdline = {
-        format = {
-          cmdline = { icon = '⮞' },
-          search_down = { icon = '🔍▽' },
-          search_up = { icon = '🔍△' },
-          filter = { icon = '＄⮚' },
-          lua = { icon = ' ⮚' },
-          help = { icon = '？⮚' },
-        },
+      messages = {
+        enabled = false, -- disables the Noice messages UI (format on save)
+        view = false,
       },
       views = {
         split = { enter = true },

@@ -11,6 +11,8 @@ vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
 -- Buffer Options
 vim.bo.autoread = true
 
+-- Requires definitions
+
 -- Options
 opt.autoindent = true
 opt.autoread = true
@@ -19,7 +21,6 @@ opt.backup = false
 opt.clipboard:append 'unnamedplus'
 opt.colorcolumn = ''
 opt.completeopt = 'menu,menuone,noselect'
-opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
@@ -60,34 +61,33 @@ opt.termguicolors = true -- True color support
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.virtualedit = 'block' -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = 'longest:full,full' -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 -- Testing
--- vim.diagnostic.config {
---   signs = {
---     text = {
---       [vim.diagnostic.severity.ERROR] = '',
---       [vim.diagnostic.severity.WARN] = '',
---       [vim.diagnostic.severity.INFO] = '',
---       [vim.diagnostic.severity.HINT] = '',
---     },
---     linehl = {
---       [vim.diagnostic.severity.ERROR] = '',
---       [vim.diagnostic.severity.WARN] = '',
---       [vim.diagnostic.severity.INFO] = '',
---       [vim.diagnostic.severity.HINT] = '',
---     },
---     numhl = {
---       [vim.diagnostic.severity.ERROR] = '',
---       [vim.diagnostic.severity.WARN] = '',
---       [vim.diagnostic.severity.INFO] = '',
---       [vim.diagnostic.severity.HINT] = '',
---     },
---   },
--- }
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '🚫',
+      [vim.diagnostic.severity.WARN] = '☢️',
+      [vim.diagnostic.severity.INFO] = 'ℹ️',
+      [vim.diagnostic.severity.HINT] = '💡',
+    },
+    -- linehl = {
+    --   [vim.diagnostic.severity.ERROR] = 'a',
+    --   [vim.diagnostic.severity.WARN] = 'b',
+    --   [vim.diagnostic.severity.INFO] = 'c',
+    --   [vim.diagnostic.severity.HINT] = 'd',
+    -- },
+    -- numhl = {
+    --   [vim.diagnostic.severity.ERROR] = 'a',
+    --   [vim.diagnostic.severity.WARN] = 'b',
+    --   [vim.diagnostic.severity.INFO] = 'c',
+    --   [vim.diagnostic.severity.HINT] = 'd',
+    -- },
+  },
+}
 
 if vim.fn.has 'nvim-0.10' == 1 then
   opt.smoothscroll = true
