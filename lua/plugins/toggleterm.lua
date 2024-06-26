@@ -2,7 +2,7 @@ local M = {}
 
 M.install = {
   'akinsho/toggleterm.nvim',
-  tag = '*', 
+  tag = '*',
 }
 
 M.after = function()

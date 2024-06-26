@@ -43,7 +43,6 @@ return {
 
   -- nvim-tree
   menu = 'Toggle menu',
-  collapse = 'Menu collapse',
 
   -- bufferline
   bc = 'Close others buffers',

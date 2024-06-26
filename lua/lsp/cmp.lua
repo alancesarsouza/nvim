@@ -17,6 +17,7 @@ M.install = {
       tag = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
       -- install jsregexp (optional!:).
       run = 'make install_jsregexp',
+      -- follow latest release.
     }, -- snippet engine
     'saadparwaiz1/cmp_luasnip', -- for autocompletion
   },

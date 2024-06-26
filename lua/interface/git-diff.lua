@@ -4,6 +4,10 @@ local M = {}
 M.install = { 'sindrets/diffview.nvim' }
 
 M.after = function()
+  require('diffview').setup {
+    view = {},
+  }
+
   -- Diffview - https://github.com/sindrets/diffview.nvim?tab=readme-ov-file#usage
   vim.keymap.set('n', '<leader>gc', '<Cmd> DiffviewClose <CR>', { desc = d.gc })
   vim.keymap.set('n', '<leader>gg', '<Cmd> DiffviewOpen <CR>', { desc = d.gg })

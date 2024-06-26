@@ -2,7 +2,7 @@ local M = {}
 
 M.install = {
   'folke/noice.nvim',
-  event = 'VimEnter', -- works only with `event = "VimEnter"`
+  event = 'VimEnter', -- works only with `event = "VimEnter"snapcraft`
   requires = {
     'MunifTanjim/nui.nvim',
     'rcarriga/nvim-notify',
@@ -10,10 +10,7 @@ M.install = {
   },
   config = function()
     require('noice').setup {
-      messages = {
-        enabled = false, -- disables the Noice messages UI (format on save)
-        view = false,
-      },
+      messages = { enabled = true, view = false },
       views = {
         split = { enter = true },
         cmdline_popup = {

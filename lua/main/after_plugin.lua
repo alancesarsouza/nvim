@@ -34,6 +34,7 @@ require('plugins.surround').after()
 require('plugins.telescope').after()
 require('plugins.focus').after()
 require('plugins.toggleterm').after()
+require('plugins.wakatime').after()
 
 require('plugins.virtual-text').after()
 

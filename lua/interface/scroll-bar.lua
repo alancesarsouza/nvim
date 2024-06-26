@@ -23,7 +23,6 @@ M.after = function()
 
   gitsigns.setup {}
   search.setup()
-
   hlslens.setup()
 
   scrollbar.setup {
@@ -39,21 +38,23 @@ M.after = function()
       highlight = 'AlphaLogo',
     },
     marks = {
-      Cursor = { text = '◁', priority = 0, color = c.cursor.fg },
+      Cursor = { text = '◁', priority = 1, color = c.cursor.bg },
+      Search = { text = { '─', '━' }, priority = 1, color = c.status.search, highlight = 'Search' },
       Error = {
         text = { '─', '━' },
         priority = 2,
         color = c.status.error,
         highlight = 'DiagnosticVirtualTextError',
       },
-      GitAdd = { text = '┥', priority = 7, color = c.git.add, highlight = 'GitSignsAdd' },
-      GitChange = { text = '┤', priority = 7, color = c.git.change, highlight = 'GitSignsChange' },
-      GitDelete = { text = '│', priority = 7, color = c.git.delete, highlight = 'GitSignsDelete' },
-      Hint = { text = { '─', '━' }, priority = 5, color = c.status.hint, highlight = 'DiagnosticVirtualTextHint' },
-      Info = { text = { '─', '━' }, color = c.status.info },
-      Misc = { text = { '─', '━' }, priority = 6, color = c.status.misc, highlight = 'Normal' },
-      Search = { text = { '─', '━' }, priority = 1, color = c.status.search, highlight = 'Search' },
       Warn = { text = { '─', '━' }, priority = 3, color = c.status.warn, highlight = 'DiagnosticVirtualTextWarn' },
+
+      GitAdd = { text = '┥', priority = 4, color = c.git.add, highlight = 'GitSignsAdd' },
+      GitChange = { text = '┤', priority = 4, color = c.git.change, highlight = 'GitSignsChange' },
+      GitDelete = { text = '│', priority = 4, color = c.git.delete, highlight = 'GitSignsDelete' },
+
+      Hint = { text = { '─', '━' }, priority = 5, color = c.status.hint, highlight = 'DiagnosticVirtualTextHint' },
+      Info = { text = { '─', '━' }, priority = 6, color = c.status.info },
+      Misc = { text = { '─', '━' }, priority = 7, color = c.status.misc, highlight = 'Normal' },
     },
     excluded_buftypes = { 'terminal' },
     excluded_filetypes = r.ignore_files.scrollbar,

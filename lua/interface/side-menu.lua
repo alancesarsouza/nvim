@@ -18,10 +18,25 @@ M.after = function()
   vim.g.loaded_netrwPlugin = 1
 
   -- NvimTreeCollapse
-  vim.keymap.set('n', '<leader>e', '<Cmd> NvimTreeToggle <CR>', { desc = d.menu })
-  vim.keymap.set('n', '<leader>c', '<Cmd> NvimTreeCollapse <CR>', { desc = d.collapse })
+  vim.keymap.set('n', '<leader>e', '<Cmd> NvimTreeFindFileToggle <CR>', { desc = d.menu })
 
   plugin.setup {
+    -- tree = { toggle_hidden_filter = false },
+    renderer = {
+      icons = {
+        glyphs = {
+          git = {
+            unstaged = '🞴',
+            staged = '✓',
+            unmerged = '',
+            renamed = '➜',
+            untracked = '★',
+            deleted = '',
+            ignored = '◌',
+          },
+        },
+      },
+    },
     view = {
       width = 35,
     },

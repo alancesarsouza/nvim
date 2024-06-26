@@ -2,10 +2,10 @@ local M = {}
 
 M.on_attach = function(_client, bufnr)
   -- da erro ao salvar outros arquivos
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    buffer = bufnr,
-    command = 'EslintFixAll',
-  })
+  -- vim.api.nvim_create_autocmd('BufWritePre', {
+  --   buffer = bufnr,
+  --   command = 'EslintFixAll',
+  -- })
 end
 
 M.install = { 'stevearc/conform.nvim' }
@@ -15,6 +15,7 @@ M.after = function()
   if not status_ok then
     return
   end
+
   vim.o.formatexpr = 'EslintFixAll'
 
   plugin.setup {
@@ -25,10 +26,10 @@ M.after = function()
 
       lua = { 'stylua' },
 
-      javascript = { { 'prettierd' }, { 'eslint_d' } },
-      javascriptreact = { { 'prettierd' }, { 'eslint_d' } },
-      typescript = { { 'prettierd' }, { 'eslint_d' } },
-      typescriptreact = { { 'prettierd' }, { 'eslint_d' } },
+      javascript = { { 'prettierd' }, 'eslint_d' },
+      javascriptreact = { { 'prettierd' }, 'eslint_d' },
+      typescript = { { 'prettierd' }, 'eslint_d' },
+      typescriptreact = { { 'prettierd' }, 'eslint_d' },
 
       css = { 'prettierd' },
       graphql = { 'prettierd' },
@@ -41,13 +42,15 @@ M.after = function()
     format_on_save = {
       async = false,
       lsp_fallback = false,
-      timeout_ms = 1000, -- fast format prettierd
+      timeout_ms = 500, -- fast format prettierd
+      quiet = true,
     },
 
     format_after_save = {
       async = true,
       lsp_fallback = true,
       timeout_ms = 2000, -- slow format eslint_d (required)
+      quiet = true,
     },
   }
 end

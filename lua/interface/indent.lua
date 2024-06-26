@@ -1,4 +1,5 @@
 local hl = require 'main.register_hl'
+
 local M = {}
 
 local highlight = {
@@ -30,6 +31,7 @@ M.after = function()
   end)
 
   vim.g.Theme_delimiters = { highlight = highlight }
+
   ibl.setup {
     indent = { highlight = highlight, char = '' },
     whitespace = {
@@ -42,14 +44,7 @@ M.after = function()
   hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
   indentscope.setup {
-    draw = {
-      -- Delay (in ms) between event and start of drawing scope indicator
-      delay = 100,
-      -- Symbol priority. Increase to display on top of more symbols.
-      priority = 2,
-    },
-
-    -- Which character to use for drawing scope indicator
+    draw = { delay = 100, priority = 2 },
     symbol = '│',
   }
 end
