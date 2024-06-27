@@ -63,8 +63,8 @@ return {
     },
 
     backgrond = {
-      normal = '#201030',
-      visible = '#302040',
+      normal = '#202030',
+      visible = '#3f004f',
       focus = '#3f004f',
     },
   },
