@@ -9,6 +9,7 @@ require('interface.bottom-bar').after()
 require('interface.notifications').after()
 require('interface.side-menu').after()
 require('interface.scroll-bar').after()
+require('interface.code-actions').after()
 
 -- -- LSP plugins
 require('lsp.cmp').after()
@@ -19,8 +20,6 @@ require('lsp.mason').after()
 require('lsp.treesitter').after()
 
 -- -- Other plugins
-require('plugins.test-install').after()
-
 require('plugins.autopair').after()
 require('plugins.which-key').after()
 require('plugins.codeium').after()

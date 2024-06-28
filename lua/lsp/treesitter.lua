@@ -3,6 +3,7 @@ local M = {}
 M.install = {
   'nvim-treesitter/nvim-treesitter',
   event = 'VimEnter',
+  branch = 'master',
   requires = { 'HiPhish/rainbow-delimiters.nvim' },
 
   setup = function()

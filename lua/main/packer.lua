@@ -54,6 +54,7 @@ return packer.startup(function(use)
   use(require('interface.side-menu').install)
   use(require('interface.scroll-bar').install)
   use(require('interface.git-diff').install)
+  use(require('interface.code-actions').install)
 
   -- LSP plugins
   use(require('lsp.cmp').install)
@@ -64,8 +65,6 @@ return packer.startup(function(use)
   use(require('lsp.treesitter').install)
 
   -- -- Other plugins
-  use(require('plugins.test-install').install)
-
   use(require('plugins.autopair').install)
   use(require('plugins.codeium').install)
   use(require('plugins.colorizer').install)
@@ -80,6 +79,7 @@ return packer.startup(function(use)
   use(require('plugins.toggleterm').install)
   use(require('plugins.which-key').install)
   use(require('plugins.virtual-text').install)
+  use(require('plugins.wakatime').install)
 
   -- use(require('plugins.virtual-text').install)
 

@@ -1,5 +1,5 @@
 local M = {}
-
+-- aditional
 M.install = {
   'hrsh7th/nvim-cmp',
   requires = {
@@ -49,6 +49,16 @@ M.after = function()
       ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     sources = cmp.config.sources({
+      -- {
+      --   name = 'spell',
+      --   option = {
+      --     keep_all_entries = false,
+      --     enable_in_context = function()
+      --       return true
+      --     end,
+      --     preselect_correct_word = true,
+      --   },
+      -- },
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.

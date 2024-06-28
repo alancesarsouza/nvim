@@ -37,8 +37,6 @@ M.after = function()
   lspconfig['tsserver'].setup {
     capabilities = capabilities,
   }
-
-  vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { desc = 'Code action TODO:move todo description' })
 end
 
 return M

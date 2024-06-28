@@ -21,7 +21,11 @@ M.after = function()
   vim.keymap.set('n', '<leader>e', '<Cmd> NvimTreeFindFileToggle <CR>', { desc = d.menu })
 
   plugin.setup {
-    -- tree = { toggle_hidden_filter = false },
+    actions = {
+      open_file = {
+        quit_on_open = true,
+      },
+    },
     renderer = {
       icons = {
         glyphs = {
