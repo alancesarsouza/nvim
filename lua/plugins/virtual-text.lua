@@ -1,3 +1,4 @@
+-- mostra a informacao do diagnostic na parte superior
 local M = {}
 
 M.install = { 'dgagn/diagflow.nvim' }

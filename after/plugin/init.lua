@@ -1,1 +1,1 @@
-require 'main.after_plugin'
+require 'after-install'

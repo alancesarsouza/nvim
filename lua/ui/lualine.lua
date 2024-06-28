@@ -1,3 +1,4 @@
+-- informacoes da barra inferior do editor
 local r = require 'main.rules'
 local M = {}
 

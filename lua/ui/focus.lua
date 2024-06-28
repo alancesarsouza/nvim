@@ -1,3 +1,4 @@
+-- aumenta o tamanho da janela em foco
 local M = {}
 
 M.install = { 'nvim-focus/focus.nvim' }

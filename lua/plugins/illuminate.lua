@@ -1,3 +1,4 @@
+-- destaca a palavra atual on o cursor esta
 local r = require 'main.rules'
 local M = {}
 

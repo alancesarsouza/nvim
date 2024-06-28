@@ -1,3 +1,4 @@
+-- pesquisas por palavras
 local d = require 'main.descriptions'
 local M = {}
 

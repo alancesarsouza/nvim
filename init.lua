@@ -1,3 +1,3 @@
-require 'main.packer'
-require 'main.base'
-require 'main.remap'
+require 'packer'
+require 'config.base'
+require 'config.remap'

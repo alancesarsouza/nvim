@@ -1,3 +1,4 @@
+-- mostra o hexadecimal de cores
 local M = {}
 
 M.install = { 'norcalli/nvim-colorizer.lua' }

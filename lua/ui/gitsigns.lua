@@ -1,3 +1,4 @@
+-- mostra diagnosticos do git
 local M = {}
 
 M.install = {

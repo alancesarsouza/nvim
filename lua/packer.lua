@@ -43,19 +43,6 @@ packer.init {
 -- MINI.NVIM - https://github.com/echasnovski/mini.nvim?tab=readme-ov-file#modules
 
 return packer.startup(function(use)
-  -- Interface plugins
-  use(require('interface.cover').install)
-  use(require('interface.theme').install)
-  use(require('interface.tabs').install)
-  use(require('interface.cursor').install)
-  use(require('interface.indent').install)
-  use(require('interface.bottom-bar').install)
-  use(require('interface.notifications').install)
-  use(require('interface.side-menu').install)
-  use(require('interface.scroll-bar').install)
-  use(require('interface.git-diff').install)
-  use(require('interface.code-actions').install)
-
   -- LSP plugins
   use(require('lsp.cmp').install)
   use(require('lsp.conform').install)
@@ -64,24 +51,35 @@ return packer.startup(function(use)
   use(require('lsp.mason').install)
   use(require('lsp.treesitter').install)
 
-  -- -- Other plugins
+  -- UI plugins
+  use(require('ui.alpha-nvim').install)
+  use(require('ui.barbar').install)
+  use(require('ui.bluloco').install)
+  use(require('ui.focus').install)
+  use(require('ui.git-diff').install)
+  use(require('ui.gitsigns').install)
+  use(require('ui.impatient').install)
+  use(require('ui.indent-blankline').install)
+  use(require('ui.lualine').install)
+  use(require('ui.noice').install)
+  use(require('ui.scrollbar').install)
+  use(require('ui.telescope').install)
+  use(require('ui.toggleterm').install)
+  use(require('ui.tree').install)
+
+  -- Other plugins
+  use(require('plugins.actions-preview').install)
   use(require('plugins.autopair').install)
   use(require('plugins.codeium').install)
   use(require('plugins.colorizer').install)
   use(require('plugins.comment').install)
+  use(require('plugins.cursorline').install)
   use(require('plugins.git-blame').install)
-  use(require('plugins.gitsigns').install)
   use(require('plugins.illuminate').install)
-  use(require('plugins.impatient').install)
+  use(require('plugins.lugins.virtual-text').install)
   use(require('plugins.surround').install)
-  use(require('plugins.telescope').install)
-  use(require('plugins.focus').install)
-  use(require('plugins.toggleterm').install)
-  use(require('plugins.which-key').install)
-  use(require('plugins.virtual-text').install)
   use(require('plugins.wakatime').install)
-
-  -- use(require('plugins.virtual-text').install)
+  use(require('plugins.which-key').install)
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

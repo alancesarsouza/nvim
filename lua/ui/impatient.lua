@@ -1,3 +1,4 @@
+-- faz cache dos pacotes
 local M = {}
 
 M.install = { 'lewis6991/impatient.nvim' }
