@@ -1,13 +1,5 @@
 local M = {}
 
-M.on_attach = function(_client, bufnr)
-  -- da erro ao salvar outros arquivos
-  -- vim.api.nvim_create_autocmd('BufWritePre', {
-  --   buffer = bufnr,
-  --   command = 'EslintFixAll',
-  -- })
-end
-
 M.install = { 'stevearc/conform.nvim' }
 
 M.after = function()
@@ -19,6 +11,8 @@ M.after = function()
   vim.o.formatexpr = 'EslintFixAll'
 
   plugin.setup {
+    log_level = vim.log.levels.DEBUG,
+
     formatters_by_ft = {
       -- file = { "MustRun", "MustRun" }
       -- file = { { "OptionalRun" }, "MustRun" }
