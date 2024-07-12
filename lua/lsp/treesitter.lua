@@ -17,7 +17,7 @@ M.install = {
       rainbow = { enable = true },
 
       -- Enable Autotag
-      autotag = { enable = true }, -- not workds
+      autotag = { enable = false }, -- not workds
 
       -- A list of parser names, or "all" (the five listed parsers should always be installed)
       ensure_installed = {

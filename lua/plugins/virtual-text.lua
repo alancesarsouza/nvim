@@ -19,16 +19,8 @@ M.after = function()
     inline_padding_left = 1, -- the padding left when the placement is inline
     -- update_event = { 'DiagnosticChanged', 'BufReadPost' }, -- the event that updates the diagnostics cache
     toggle_event = {}, -- if InsertEnter, can toggle the diagnostics on inserts
-    show_sign = false, -- set to true if you want to render the diagnostic sign before the diagnostic message
+    show_sign = true, -- set to true if you want to render the diagnostic sign before the diagnostic message
     render_event = { 'DiagnosticChanged', 'CursorMoved' },
-    border_chars = {
-      top_left = '╒',
-      top_right = '╕',
-      bottom_left = '╘',
-      bottom_right = '╛',
-      horizontal = '═',
-      vertical = '│',
-    },
     show_borders = true,
   }
 end

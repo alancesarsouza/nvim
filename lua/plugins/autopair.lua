@@ -1,3 +1,4 @@
+-- nao aplica pair nas tags somente (), '', {},  [], ...
 local M = {}
 
 M.install = {
