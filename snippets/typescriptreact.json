@@ -1,14 +1,119 @@
 {
+  "useEffect": {
+    "prefix": "rue",
+    "description": "useEffect",
+    "body": [
+      "React.useEffect(() => {",
+      "\tconsole.log($1);",
+      "\treturn () => console.log($1)",
+      "}, []);"
+    ]
+  },
+
+  "arrowFunction": {
+    "prefix": "af",
+    "description": "set a arrow function",
+    "body": ["() => {$1}"]
+  },
+
+  "onClick": {
+    "prefix": "click",
+    "description": "onClick",
+    "body": ["onClick={() => { console.log('CLICK'); }}"]
+  },
+
+  "onChange": {
+    "prefix": "change",
+    "description": "onChange",
+    "body": [
+      "onChange={({ target }) => { console.log('CLICK', target.value); }}"
+    ]
+  },
+
+  "useRef": {
+    "prefix": "rur",
+    "description": "useRef",
+    "body": [
+      "const $1Ref = React.useRef<HTMLDivElement | null>(null);",
+      "console.log($1Ref.current);"
+    ]
+  },
+
+  "useMemo": {
+    "prefix": "rum",
+    "description": "useMemo",
+    "body": [
+      "const $1 = React.useMemo(() => {",
+      "\tif(true) {",
+      "\t\treturn null;",
+      "\t}",
+      "\treturn null;",
+      "}, []);",
+
+      "console.log({ $1 });"
+    ]
+  },
+  "useState": {
+    "prefix": "rus",
+    "description": "useState",
+    "body": ["const [$1, set$1] = React.useState<any>();"]
+  },
+
+  "useCallback": {
+    "prefix": "ruc",
+    "description": "useCallback",
+    "body": ["const callback = React.useCallback(() => {$1}, []);"]
+  },
+
   "Console Log": {
     "prefix": "cl",
-    "description": "add console.log()",
-    "body": ["console.log($1)"]
+    "description": "console.log()",
+    "body": ["console.log('$1', $1)"]
   },
+
+  "Foward Referece": {
+    "prefix": "rcr",
+    "description": "",
+    "body": [
+      "function $1(props: any, ref: React.ForwardedRef<HTMLInputElement>) {",
+      "\tconst [value, setValue] = React.useState<string>('');",
+      "\tconsole.log(props);\n",
+
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<input",
+      "\t\t\t\tref={ref}",
+      "\t\t\t\tvalue={value}",
+      "\t\t\t\tonChange={({ target }) => setValue(target.value)}",
+      "\t\t\t/>",
+      "\t\t</div>",
+      "\t);",
+      "};\n",
+      "export default React.forwardRef($1);"
+    ]
+  },
+
+  "Create function": {
+    "prefix": "rf",
+    "description": "",
+    "body": [
+      "function $1(param: any) {",
+      "\tconsole.log(param);",
+      "\tconst fail = true;",
+      "\tif(fail) {",
+      "\t\treturn null;",
+      "\t}",
+      "\treturn null;",
+      "}"
+    ]
+  },
+
   "Create const": {
     "prefix": "cons",
     "description": "add variable declaration",
     "body": ["const $1 = '$1';"]
   },
+
   "Form Buttons": {
     "prefix": "ac",
     "description": "action buttons: custom",
@@ -17,24 +122,27 @@
       "<Button type='submit'>submit</Button>"
     ]
   },
+
   "React Component": {
     "prefix": "rc",
     "description": "React Component",
     "body": [
-      "export interface $1Props {",
-      "\t$2",
-      "}",
-      "export function $1(props: $1Props){",
+      "/* eslint-disable sort-exports/sort-exports */",
+      "export type $1Props = {",
+      "\tdata: any",
+      "}\n",
+      "export function $1({ data }: $1Props){",
       "\treturn (",
       "\t\t<div>",
-      "\t\t\t$1",
+      "\t\t\t<h1>$1 {JSON.stringify(data || {})}</h1>",
       "\t\t</div>",
       "\t)",
-      "}"
+      "}\n"
     ]
   },
+
   "React Next": {
-    "prefix": "rn",
+    "prefix": "rcp",
     "description": "React Component: custom",
     "body": [
       "import { type NextPage } from 'next'",
@@ -44,35 +152,17 @@
       "export default $1"
     ]
   },
-  "tab": {
-    "prefix": "tab",
-    "description": "tab",
+
+  "switch": {
+    "prefix": "switch",
+    "description": "switch",
     "body": [
-      "enum TabKind {",
-      "  SHOULD,",
-      "  COUNTED,",
-      "}",
-      "",
-      "",
-      "<TabProvider initialValue={TabKind.SHOULD}>",
-      "        <Tabs",
-      "          sx={{",
-      "            p: '0 24px',",
-      "          }}",
-      "        >",
-      "          <Tab",
-      "            label={'SHOULD'}",
-      "            value={TabKind.SHOULD}",
-      "          ></Tab>",
-      "          <Tab",
-      "            label={'COUNTED'}",
-      "            value={TabKind.COUNTED}",
-      "          ></Tab>",
-      "        </Tabs>",
-      "      </TabProvider>",
-      "",
-      "",
-      ""
+      "switch ($1: string) {",
+      "\tcase '$2':",
+      "\t\treturn 'bar';",
+      "\tdefault:",
+      "\t\treturn null;",
+      "}"
     ]
   }
 }

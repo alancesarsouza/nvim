@@ -1,10 +1,12 @@
 -- This file is automatically loaded by plugins.core
 local opt = vim.opt
+-- Q => === !==
+vim.o.guifont = 'Jet Brand Text:h11'
 
 -- Global
 vim.g.autoformat = true
 vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+-- vim.g.maplocalleader = '\\'
 vim.g.markdown_recommended_style = 0 -- Fix markdown indentation settings
 vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
 
@@ -21,6 +23,7 @@ opt.backup = false
 opt.clipboard:append 'unnamedplus'
 opt.colorcolumn = ''
 opt.completeopt = 'menu,menuone,noselect'
+opt.conceallevel = 2
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
@@ -28,13 +31,13 @@ opt.foldlevel = 99 -- Folding
 opt.formatoptions = 'jcroqlnt' -- tcqj
 opt.grepformat = '%f:%l:%c:%m'
 opt.grepprg = 'rg --vimgrep'
-opt.hlsearch = true
+opt.hlsearch = false
 opt.ignorecase = true -- Ignore case
 opt.inccommand = 'nosplit' -- preview incremental substitute
 opt.incsearch = true
 opt.isfname:append '@-@'
 opt.laststatus = 3 -- global statusline
-opt.list = false -- Show some invisible characters (tabs...
+opt.list = true -- When False show some invisible characters (tabs...
 opt.mouse = 'a' -- Enable mouse mode
 opt.mouse:append 'a'
 opt.nu = true
@@ -56,7 +59,7 @@ opt.spell = false -- spell
 opt.spelllang = { 'en' } -- spell
 opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
-opt.swapfile = false
+opt.swapfile = false -- test if swapfile stop ~/.local/state/nvim/swap (_swap)
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
 opt.undofile = true
@@ -67,6 +70,7 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 -- Testing
+vim.opt.pumblend = 50 -- value range [0,100]
 vim.diagnostic.config {
   signs = {
     text = {

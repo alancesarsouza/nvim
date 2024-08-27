@@ -8,8 +8,9 @@ require('lsp.treesitter').after()
 
 -- UI plugins
 require('ui.alpha-nvim').after()
+require('ui.anyline').after()
 require('ui.barbar').after()
-require('ui.bluloco').after()
+require('ui.barbecue').after()
 require('ui.focus').after()
 require('ui.git-diff').after()
 require('ui.gitsigns').after()
@@ -19,11 +20,11 @@ require('ui.lualine').after()
 require('ui.noice').after()
 require('ui.scrollbar').after()
 require('ui.telescope').after()
+require('ui.theme').after()
 require('ui.toggleterm').after()
 require('ui.tree').after()
 
 -- Other plugins
-require('plugins.actions-preview').after()
 require('plugins.autopair').after()
 require('plugins.codeium').after()
 require('plugins.colorizer').after()

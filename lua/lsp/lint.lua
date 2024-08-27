@@ -9,7 +9,7 @@ M.autocommand = function()
   end
 
   -- plugin.try_lint 'cspell'
-  plugin.try_lint()
+plugin.try_lint()
 end
 
 M.after = function()

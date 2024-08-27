@@ -31,6 +31,7 @@ M.after = function()
   -- ESLINT https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
   lspconfig.eslint.setup {
     on_attach = conform.on_attach,
+    -- capabilities = capabilities,
   }
 
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

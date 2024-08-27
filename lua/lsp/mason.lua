@@ -18,12 +18,9 @@ M.after = function()
   plugin.setup {
     ui = {
       icons = {
-        -- package_installed = '✓',
-        -- package_pending = '➜',
-        -- package_uninstalled = '✗',
-        package_installed = 'a',
-        package_pending = 'b',
-        package_uninstalled = 'c',
+        package_installed = '✓',
+        package_pending = '➜',
+        package_uninstalled = '✗',
       },
     },
   }

@@ -8,7 +8,7 @@ local save = function()
   vim.cmd.w()
 end
 
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-s>', save, { desc = d.w })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-s>', save, { noremap = true, silent = true, desc = d.w })
 
 -- undo
 local undo = function()
@@ -16,7 +16,7 @@ local undo = function()
   vim.cmd.u()
 end
 
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-z>', undo, { desc = d.u })
+vim.keymap.set({ 'n', 'v', 'i', 'x' }, '<C-z>', undo, { desc = d.u })
 
 -- escape
 vim.keymap.set('i', '<C-c>', vim.cmd.stopinsert, { desc = d.esc })
@@ -41,6 +41,9 @@ vim.keymap.set('n', '<leader><Char-124>', '<Cmd> split <CR>', { desc = d.split }
 vim.keymap.set('n', '<leader>ps', '<Cmd> PackerSync <CR>', { desc = d.ps })
 vim.keymap.set('n', '<leader>pu', '<Cmd> PackerUpdate <CR>', { desc = d.pu })
 vim.keymap.set('n', '<leader>pm', '<Cmd> Mason <CR>', { desc = d.pm })
+
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Code Informations' })
+vim.keymap.set('n', 'L', vim.lsp.buf.code_action, { desc = 'Code Actions' })
 
 -- CHAR CODE LIST
 -- !	33	exclamation mark

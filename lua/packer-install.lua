@@ -53,8 +53,9 @@ return packer.startup(function(use)
 
   -- UI plugins
   use(require('ui.alpha-nvim').install)
+  use(require('ui.anyline').install)
   use(require('ui.barbar').install)
-  use(require('ui.bluloco').install)
+  use(require('ui.barbecue').install)
   use(require('ui.focus').install)
   use(require('ui.git-diff').install)
   use(require('ui.gitsigns').install)
@@ -64,11 +65,11 @@ return packer.startup(function(use)
   use(require('ui.noice').install)
   use(require('ui.scrollbar').install)
   use(require('ui.telescope').install)
+  use(require('ui.theme').install)
   use(require('ui.toggleterm').install)
   use(require('ui.tree').install)
 
   -- Other plugins
-  use(require('plugins.actions-preview').install)
   use(require('plugins.autopair').install)
   use(require('plugins.codeium').install)
   use(require('plugins.colorizer').install)

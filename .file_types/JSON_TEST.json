@@ -1,0 +1,14 @@
+{
+  "foo": "bar",
+  "nulable": null,
+  "number": 1,
+  "structure": {
+    "name": "Name",
+    "age": 20,
+    "children": [
+      { "name": "A", "age": 1 },
+      { "name": "B", "age": 2 }
+    ]
+  },
+  "list": ["primary", "second", "third"]
+}

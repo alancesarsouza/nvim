@@ -9,16 +9,15 @@ M.after = function()
   end
 
   vim.o.formatexpr = 'EslintFixAll'
+  -- vim.lsp.formatexpr =  'EslintFixAll'
 
   plugin.setup {
     log_level = vim.log.levels.DEBUG,
 
     formatters_by_ft = {
-      -- file = { "MustRun", "MustRun" }
-      -- file = { { "OptionalRun" }, "MustRun" }
-      -- file = { { "OptionalRun", "OptionalRun" } }
-
-      lua = { 'stylua' },
+      -- file = { "biome", "prettierd", stop_after_first = true }
+      lua = { 
+        'stylua' },
 
       javascript = { { 'prettierd' }, 'eslint_d' },
       javascriptreact = { { 'prettierd' }, 'eslint_d' },
@@ -33,18 +32,19 @@ M.after = function()
       yaml = { 'prettierd' },
     },
 
+    -- format_after_save = nil,
     format_on_save = {
       async = false,
       lsp_fallback = false,
       timeout_ms = 500, -- fast format prettierd
-      quiet = true,
+      quiet = false,
     },
 
     format_after_save = {
       async = true,
       lsp_fallback = true,
       timeout_ms = 2000, -- slow format eslint_d (required)
-      quiet = true,
+      quiet = false,
     },
   }
 end

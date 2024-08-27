@@ -5,18 +5,26 @@ local M = {}
 M.install = {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.6', -- or branch = '0.1.x',
-  requires = { { 'nvim-lua/plenary.nvim' } },
+  requires = {
+    'nvim-telescope/telescope-ui-select.nvim',
+    { 'nvim-lua/plenary.nvim' },
+  },
 }
 
 M.after = function()
-  local status_ok, builtin = pcall(require, 'telescope.builtin')
+  local status_ok, plugin = pcall(require, 'telescope')
   if not status_ok then
     return
   end
 
+  local builtin = require 'telescope.builtin'
   local actions = require 'telescope.actions'
+  local themes = require 'telescope.themes'
 
-  require('telescope').setup {
+  plugin.setup {
+    extensions = {
+      ['ui-select'] = { themes.get_dropdown {} },
+    },
     defaults = {
       mappings = {
         i = {
@@ -45,6 +53,8 @@ M.after = function()
       },
     },
   }
+  -- load_extension, somewhere after setup function:
+  plugin.load_extension 'ui-select'
 
   vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = d.ff })
   vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = d.fg })
