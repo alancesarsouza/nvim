@@ -29,6 +29,6 @@ if [ "$(cat "$NVIM/lua/reseased.lua" | grep "{ isChecking = true }")" = "" ];
 # execute vim command and destroy plugins list file
   vim --cmd "$vim_command qa!" && rm -rf "$NVIM/lua/checkhealth/$PLUGINS_FILE";
 
-	echo "DONE!"
+  vim
 fi
 
