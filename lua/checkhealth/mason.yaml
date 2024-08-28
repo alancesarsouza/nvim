@@ -1,0 +1,65 @@
+
+==============================================================================
+mason: require("mason.health").check()
+
+mason.nvim ~
+- OK mason.nvim version v1.10.0
+- OK PATH: prepend
+- OK Providers: 
+  mason.providers.registry-api
+  mason.providers.client
+- OK neovim version >= 0.7.0
+
+mason.nvim [Registries] ~
+
+mason.nvim [Core utils] ~
+- OK unzip: `UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.`
+- OK wget: `GNU Wget 1.21.4 built on linux-gnu.`
+- OK curl: `curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7`
+- OK gzip: `gzip 1.12`
+- OK tar: `tar (GNU tar) 1.35`
+- OK bash: `GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)`
+- OK sh: `Ok`
+
+mason.nvim [Languages] ~
+- WARNING Go: not available
+  - ADVICE:
+    - spawn: go failed with exit code - and signal -. go is not executable
+- WARNING Composer: not available
+  - ADVICE:
+    - spawn: composer failed with exit code - and signal -. composer is not executable
+- WARNING PHP: not available
+  - ADVICE:
+    - spawn: php failed with exit code - and signal -. php is not executable
+- WARNING luarocks: not available
+  - ADVICE:
+    - spawn: luarocks failed with exit code - and signal -. luarocks is not executable
+- WARNING Ruby: not available
+  - ADVICE:
+    - spawn: ruby failed with exit code - and signal -. ruby is not executable
+- WARNING javac: not available
+  - ADVICE:
+    - spawn: javac failed with exit code - and signal -. javac is not executable
+- WARNING java: not available
+  - ADVICE:
+    - spawn: java failed with exit code - and signal -. java is not executable
+- WARNING julia: not available
+  - ADVICE:
+    - spawn: julia failed with exit code - and signal -. julia is not executable
+- WARNING RubyGem: not available
+  - ADVICE:
+    - spawn: gem failed with exit code - and signal -. gem is not executable
+- OK python: `Python 3.12.3`
+- OK node: `v20.14.0`
+- OK cargo: `cargo 1.75.0`
+- WARNING pip: not available
+  - ADVICE:
+    - spawn: python3 failed with exit code 1 and signal 0. /usr/bin/python3: No module named pip
+
+- OK python venv: `Ok`
+- OK npm: `10.7.0`
+
+mason.nvim [GitHub] ~
+- OK GitHub API rate limit. Used: 1. Remaining: 59. Limit: 60. Reset: Wed 28 Aug 2024 07:19:25 PM -03.
+  Install and authenticate via gh-cli to increase rate limit.
+

@@ -2,6 +2,7 @@ local M = {}
 
 M.install = {
   'kylechui/nvim-surround',
+
   tag = '*',
 }
 

@@ -1,7 +1,9 @@
 -- aumenta o tamanho da janela em foco
 local M = {}
 
-M.install = { 'nvim-focus/focus.nvim' }
+M.install = {
+  'nvim-focus/focus.nvim',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'focus')

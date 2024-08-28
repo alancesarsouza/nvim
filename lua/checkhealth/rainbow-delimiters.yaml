@@ -1,0 +1,6 @@
+
+==============================================================================
+rainbow-delimiters: require("rainbow-delimiters.health").check()
+
+- No custom configuration; see :help |rb-delimiters-setup| for information.
+

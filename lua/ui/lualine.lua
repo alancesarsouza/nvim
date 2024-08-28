@@ -1,9 +1,11 @@
 -- informacoes da barra inferior do editor
 local r = require 'main.rules'
+
 local M = {}
 
 M.install = {
   'nvim-lualine/lualine.nvim',
+
   requires = { 'nvim-tree/nvim-web-devicons', opt = true },
 }
 
@@ -55,14 +57,12 @@ M.after = function()
       },
     },
     sections = {
-      -- these are to remove the defaults
-      lualine_a = {},
-      lualine_b = {},
-      lualine_y = {},
-      lualine_z = {},
-      -- These will be filled later
-      lualine_c = {},
-      lualine_x = {},
+      lualine_a = { 'mode' },
+      lualine_b = { 'branch', 'diff', 'diagnostics' },
+      lualine_c = { 'filename' },
+      lualine_x = { 'encoding', 'fileformat', 'filetype' },
+      lualine_y = { 'progress' },
+      lualine_z = { 'location' },
     },
     inactive_sections = {
       -- these are to remove the defaults

@@ -1,6 +1,8 @@
 local M = {}
 
-M.install = { 'mfussenegger/nvim-lint' }
+M.install = {
+  'mfussenegger/nvim-lint',
+}
 
 M.autocommand = function()
   local status_ok, plugin = pcall(require, 'lint')
@@ -14,6 +16,7 @@ end
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'lint')
+
   if not status_ok then
     return
   end

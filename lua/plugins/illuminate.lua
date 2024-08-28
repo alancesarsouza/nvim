@@ -1,8 +1,11 @@
 -- destaca a palavra atual on o cursor esta
 local r = require 'main.rules'
+
 local M = {}
 
-M.install = { 'RRethy/vim-illuminate' }
+M.install = {
+  'RRethy/vim-illuminate',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'illuminate')

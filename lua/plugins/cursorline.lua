@@ -1,6 +1,8 @@
 local M = {}
 
-M.install = { 'yamatsum/nvim-cursorline' }
+M.install = {
+  'yamatsum/nvim-cursorline',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'nvim-cursorline')

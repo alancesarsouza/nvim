@@ -1,0 +1,11 @@
+
+==============================================================================
+vim.treesitter: require("vim.treesitter.health").check()
+
+- Nvim runtime ABI version: 14
+- OK Parser: c          ABI: 14, path: /usr/lib/nvim/parser/c.so
+- OK Parser: lua        ABI: 14, path: /usr/lib/nvim/parser/lua.so
+- OK Parser: query      ABI: 14, path: /usr/lib/nvim/parser/query.so
+- OK Parser: vim        ABI: 14, path: /usr/lib/nvim/parser/vim.so
+- OK Parser: vimdoc     ABI: 14, path: /usr/lib/nvim/parser/vimdoc.so
+

@@ -1,7 +1,9 @@
 -- mostra a informacao do diagnostic na parte superior
 local M = {}
 
-M.install = { 'dgagn/diagflow.nvim' }
+M.install = {
+  'dgagn/diagflow.nvim',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'diagflow')

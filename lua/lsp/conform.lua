@@ -1,6 +1,8 @@
 local M = {}
 
-M.install = { 'stevearc/conform.nvim' }
+M.install = {
+  'stevearc/conform.nvim',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'conform')
@@ -14,16 +16,14 @@ M.after = function()
     log_level = vim.log.levels.DEBUG,
 
     formatters_by_ft = {
-      -- file = { "MustRun", "MustRun" }
-      -- file = { { "OptionalRun" }, "MustRun" }
-      -- file = { { "OptionalRun", "OptionalRun" } }
-
       lua = { 'stylua' },
 
-      javascript = { { 'prettierd' }, 'eslint_d' },
-      javascriptreact = { { 'prettierd' }, 'eslint_d' },
-      typescript = { { 'prettierd' }, 'eslint_d' },
-      typescriptreact = { { 'prettierd' }, 'eslint_d' },
+      sh = { 'shellharden' },
+
+      javascript = { 'prettierd', 'eslint_d' },
+      javascriptreact = { 'prettierd', 'eslint_d' },
+      typescript = { 'prettierd', 'eslint_d' },
+      typescriptreact = { 'prettierd', 'eslint_d' },
 
       css = { 'prettierd' },
       graphql = { 'prettierd' },
@@ -35,17 +35,16 @@ M.after = function()
 
     format_on_save = {
       async = false,
-      lsp_fallback = false,
       timeout_ms = 500, -- fast format prettierd
       quiet = true,
     },
 
-    format_after_save = {
-      async = true,
-      lsp_fallback = true,
-      timeout_ms = 2000, -- slow format eslint_d (required)
-      quiet = true,
-    },
+    -- format_after_save = {
+    --   async = true,
+    --   lsp_fallback = true,
+    --   timeout_ms = 2000, -- slow format eslint_d (required)
+    --   -- quiet = true,
+    -- },
   }
 end
 

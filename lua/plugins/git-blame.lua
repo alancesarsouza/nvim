@@ -1,7 +1,9 @@
 -- mostra informacoes do commit na linha do codigo
 local M = {}
 
-M.install = { 'f-person/git-blame.nvim' }
+M.install = {
+  'f-person/git-blame.nvim',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'gitblame')

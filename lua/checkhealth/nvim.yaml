@@ -1,0 +1,23 @@
+
+==============================================================================
+nvim: require("nvim.health").check()
+
+Configuration ~
+- WARNING Missing user config file: /home/alan/.config/nvim/init.vim
+  - ADVICE:
+    - :help |nvim-from-vim|
+
+Runtime ~
+- OK $VIMRUNTIME: /usr/share/nvim/runtime
+
+Performance ~
+- OK Build type: Release
+
+Remote Plugins ~
+- OK Up to date
+
+terminal ~
+- key_backspace (kbs) terminfo entry: `key_backspace=\177`
+- key_dc (kdch1) terminfo entry: `key_dc=\E[3~`
+- $COLORTERM="truecolor"
+

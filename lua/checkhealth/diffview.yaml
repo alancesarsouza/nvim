@@ -1,0 +1,18 @@
+
+==============================================================================
+diffview: require("diffview.health").check()
+
+- ERROR Failed to run healthcheck for "diffview" plugin. Exception:
+  pre-vimrc command line..function health#check, line 25
+  Vim(eval):E5108: Error executing lua ...packer/start/diffview.nvim/lua/diffview/scene/window.lua:16: attempt to index global 'DiffviewGlobal' (a nil value)
+  stack traceback:
+  ...packer/start/diffview.nvim/lua/diffview/scene/window.lua:16: in main chunk
+  [C]: in function 'require'
+  .../diffview.nvim/lua/diffview/scene/layouts/diff_2_hor.lua:2: in main chunk
+  [C]: in function 'require'
+  ...art/diffview.nvim/lua/diffview/vcs/adapters/git/init.lua:3: in main chunk
+  [C]: in function 'require'
+  .../pack/packer/start/diffview.nvim/lua/diffview/health.lua:76: in function <.../pack/packer/start/diffview.nvim/lua/diffview/health.lua:66>
+  .../pack/packer/start/diffview.nvim/lua/diffview/health.lua:99: in function 'check'
+  [string "luaeval()"]:1: in main chunk
+

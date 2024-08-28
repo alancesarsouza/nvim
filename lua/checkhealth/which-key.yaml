@@ -1,0 +1,21 @@
+
+==============================================================================
+which-key: require("which-key.health").check()
+
+- OK Most of these checks are for informational purposes only.
+  WARNINGS should be treated as a warning, and don't necessarily indicate a problem with your config.
+  Please |DON't| report these warnings as an issue.
+
+Checking your config ~
+- OK |mini.icons| is installed
+- OK |nvim-web-devicons| is installed
+
+Checking for issues with your mappings ~
+- OK No issues reported
+
+checking for overlapping keymaps ~
+- OK No overlapping keymaps found
+
+Checking for duplicate mappings ~
+- OK No duplicate mappings found
+

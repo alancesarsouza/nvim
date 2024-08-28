@@ -1,7 +1,8 @@
 local M = {}
--- aditional
+
 M.install = {
   'hrsh7th/nvim-cmp',
+
   requires = {
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',

@@ -1,0 +1,8 @@
+
+==============================================================================
+codeium: require("codeium.health").check()
+
+Codeium: checking Codeium server status ~
+- OK API key properly loaded
+- WARNING Codeium: checkhealth is not set
+

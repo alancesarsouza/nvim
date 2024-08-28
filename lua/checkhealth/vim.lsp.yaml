@@ -1,0 +1,11 @@
+
+==============================================================================
+vim.lsp: require("vim.lsp.health").check()
+
+- LSP log level : WARN
+- Log path: /home/alan/.local/state/nvim/lsp.log
+- Log size: 0 KB
+
+vim.lsp: Active Clients ~
+- No active clients
+

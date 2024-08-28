@@ -6,16 +6,6 @@ local base = { bg = c.tabs.backgrond.normal, fg = c.tabs.text.normal }
 local visible = { bg = c.tabs.backgrond.visible, fg = c.tabs.text.visible }
 local selected = { bg = c.tabs.backgrond.focus, fg = c.tabs.text.focus }
 
-M.register_rainbow = function()
-  vim.api.nvim_set_hl(0, 'RainbowRed', { fg = c.colors.red })
-  vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = c.colors.yellow })
-  vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = c.colors.blue })
-  vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = c.colors.orange })
-  vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = c.colors.green })
-  vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = c.colors.violet })
-  vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = c.colors.cyan })
-end
-
 M.set_cursor_color = function()
   vim.opt.guicursor = 'n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor,a:blinkon100'
 end
@@ -81,6 +71,9 @@ M.highlight = function()
   vim.api.nvim_set_hl(0, 'BufferInactiveCHANGED', { bg = base.bg, fg = c.status.hover })
   vim.api.nvim_set_hl(0, 'BufferInactiveINFO', { bg = base.bg, fg = c.status.info })
   vim.api.nvim_set_hl(0, 'BufferInactiveWARN', { bg = base.bg, fg = c.status.warn })
+
+  vim.api.nvim_set_hl(0, 'TAlan1', { bg = '#ff00ff', fg = '#00ffcc' })
+  vim.api.nvim_set_hl(0, 'TAlan2', { bg = '#ffff00', fg = '#00ccff' })
 end
 
 return M

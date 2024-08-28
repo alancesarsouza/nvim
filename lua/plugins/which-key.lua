@@ -1,7 +1,11 @@
 local d = require 'main.descriptions'
 local M = {}
 
-M.install = { 'folke/which-key.nvim' }
+M.install = {
+  'folke/which-key.nvim',
+
+  requires = { 'echasnovski/mini.icons' },
+}
 
 M.after = function()
   local status_ok, wk = pcall(require, 'which-key')
@@ -9,13 +13,14 @@ M.after = function()
     return
   end
   wk.setup()
-
-  wk.register {
-    ['<leader>f'] = d.f,
-    ['<leader>g'] = d.g,
-    ['<leader>l'] = d.l,
-    ['<leader>p'] = d.p,
+  wk.add {
+    { '<leader>f', desc = d.f, prefix = '' },
+    { '<leader>g', desc = d.g, prefix = '' },
+    { '<leader>l', desc = d.l, prefix = '' },
+    { '<leader>p', desc = d.p, prefix = '' },
   }
+
+  wk.register {}
 end
 
 return M

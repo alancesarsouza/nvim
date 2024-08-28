@@ -44,3 +44,25 @@ ls ~/.config/nvim && sh ~/.config/nvim/install.sh
 nvim
 
 ```
+
+### ADDING A NEW PLUGIN
+
+1. add a file with plugin name on correct folder
+2. add this structure
+```.lua
+-- descricao da lib
+local M = {}
+
+M.install = { 'github/libname.nvim' }
+
+M.after = function()
+  local status_ok, plugin = pcall(require, 'libname')
+  if not status_ok then
+    return
+  end
+
+  plugin.setup {}
+end
+
+return M
+```

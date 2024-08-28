@@ -46,12 +46,13 @@ return {
   git = git,
   rainbow = rainbow,
   status = status,
+  lsp_highlight = { fg = '#ff65cc' },
 
   tab_bg = '#110011',
   bg = '#000000',
   fg = '#ffffff',
 
-  logo = { fg = '#004422' },
+  logo = { fg = '#438888' },
   cursor = { bg = colors.yellow },
   tabs = {
     bar_color = '#111111',

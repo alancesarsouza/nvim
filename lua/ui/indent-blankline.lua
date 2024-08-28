@@ -1,52 +1,45 @@
-local hl = require 'main.register_hl'
-
 local M = {}
-
-local highlight = {
-  'RainbowRed',
-  'RainbowOrange',
-  'RainbowYellow',
-  'RainbowGreen',
-  'RainbowBlue',
-  'RainbowCyan',
-  'RainbowViolet',
-}
 
 M.install = {
   'lukas-reineke/indent-blankline.nvim',
-  requires = { 'echasnovski/mini.indentscope' },
+
+  requires = { { 'echasnovski/mini.nvim', version = '*' } },
+
+  config = function()
+    local hooks = require 'ibl.hooks'
+
+    hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+      vim.api.nvim_set_hl(0, 'MiniIndentscopeSymbol', { fg = '#ffffcc' })
+
+      vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#660000' })
+      vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#666600' })
+      vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#003366' })
+      vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#663300' })
+      vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#006633' })
+      vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#660066' })
+      vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#006666' })
+    end)
+
+    require('mini.indentscope').setup { symbol = '🭰' }
+    require('ibl').setup {
+      indent = {
+        highlight = {
+          'RainbowRed',
+          'RainbowYellow',
+          'RainbowBlue',
+          'RainbowOrange',
+          'RainbowGreen',
+          'RainbowViolet',
+          'RainbowCyan',
+        },
+        char = '🭰',
+      },
+      whitespace = { remove_blankline_trail = false },
+      scope = { enabled = false },
+    }
+  end,
 }
 
-M.after = function()
-  local hook_ok, hooks = pcall(require, 'ibl.hooks')
-  local indentscope_ok, indentscope = pcall(require, 'mini.indentscope')
-  local status_ok, ibl = pcall(require, 'ibl')
-
-  if not status_ok or not hook_ok or not indentscope_ok then
-    return
-  end
-
-  hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    hl.register_rainbow()
-  end)
-
-  vim.g.Theme_delimiters = { highlight = highlight }
-
-  ibl.setup {
-    indent = { highlight = highlight, char = '' },
-    whitespace = {
-      highlight = highlight,
-      remove_blankline_trail = false,
-    },
-    scope = { enabled = false },
-  }
-
-  hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-
-  indentscope.setup {
-    draw = { delay = 100, priority = 2 },
-    symbol = '│',
-  }
-end
+M.after = function() end
 
 return M

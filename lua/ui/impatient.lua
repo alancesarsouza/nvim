@@ -1,7 +1,9 @@
 -- faz cache dos pacotes
 local M = {}
 
-M.install = { 'lewis6991/impatient.nvim' }
+M.install = {
+  'lewis6991/impatient.nvim',
+}
 
 M.after = function()
   local status_ok, plugin = pcall(require, 'impatient')

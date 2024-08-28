@@ -1,0 +1,7 @@
+
+==============================================================================
+luasnip: require("luasnip.health").check()
+
+luasnip ~
+- OK jsregexp is installed
+

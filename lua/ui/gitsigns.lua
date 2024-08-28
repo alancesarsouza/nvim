@@ -3,6 +3,7 @@ local M = {}
 
 M.install = {
   'lewis6991/gitsigns.nvim',
+
   requires = { 'nvim-lua/plenary.nvim' },
 }
 

@@ -3,9 +3,11 @@ local M = {}
 
 M.install = {
   'windwp/nvim-autopairs',
+
   event = 'InsertEnter',
 
   config = function()
+    -- require cofigure on event to works
     local status_ok, plugin = pcall(require, 'nvim-autopairs')
     if not status_ok then
       return

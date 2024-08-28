@@ -2,6 +2,7 @@ local M = {}
 
 M.install = {
   'JoosepAlviste/nvim-ts-context-commentstring',
+
   requires = { 'numToStr/Comment.nvim' },
 }
 

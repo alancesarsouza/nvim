@@ -22,8 +22,8 @@ M.after = function()
   end
 
   gitsigns.setup {}
-  search.setup()
-  hlslens.setup()
+  search.setup {}
+  hlslens.setup {}
 
   scrollbar.setup {
     show = true,

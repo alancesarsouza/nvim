@@ -1,7 +1,9 @@
+-- ia para auxiliar o codigo
 local M = {}
 
 M.install = {
   'Exafunction/codeium.nvim',
+
   requires = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' },
 }
 

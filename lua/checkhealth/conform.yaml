@@ -1,0 +1,7 @@
+
+==============================================================================
+conform: require("conform.health").check()
+
+conform.nvim report ~
+- Log file: /home/alan/.local/state/nvim/conform.log
+
