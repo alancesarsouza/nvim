@@ -1,0 +1,302 @@
+# --------------------------------------------------------------------------------
+# VARIABLES
+set $alt Mod1 
+set $super Mod4 
+
+set $background #00000088
+# button border
+set $color01 #ff00ffcc
+# button text
+set $color02 #ffffff
+# button background
+set $color03 #440044dd
+# status text
+set $color04 #ffffff
+# border focused 
+set $color05 #ff88ff88
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+set $ws1   "1 🯱 ➤     Browser  "
+set $ws2   "2 🯲 ➤     Code     "
+set $ws3   "3 🯳 ➤     Terminal "
+set $ws4   "4 🯴 ➤  󱧏   Tools    "
+set $ws5   "5 🯵 ➤     Schedule "
+set $ws6   "6 𝗤 ➤     YouTube  "
+set $ws7   "7 𝗪 ➤     One Note "
+set $ws8   "8 𝗘 ➤  󰘦   Postman  "
+set $ws9   "9 𝗥 ➤     Figma    "
+set $ws10 "10 𝗧 ➤     Music    "
+
+set $mode_launcher    (w)➤WORK      (c)➤CALENDAR │ (d)➤DISCORD │ (t)➤TIDAL │ (y)➤YOUTUBE
+bindsym $alt+o mode "$mode_launcher"
+
+# --------------------------------------------------------------------------------
+# BIND SYSTEM KYES
+#change volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# music control
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# bindsym 
+# Use Mouse+$alt to drag floating windows to their wanted position
+# floating_modifier $alt
+bindsym $alt+v split h 
+bindsym $alt+b split v
+
+# Calculator Alias Super + 0
+bindsym $super+0 exec gnome-calculator 
+
+# MENU
+bindsym $alt+p exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=12'" 
+# start a terminal
+bindsym $alt+Return exec gnome-terminal
+# enter fullscreen mode for the focused container
+bindsym $alt+f fullscreen toggle
+# resize window 
+bindsym $super+r mode "resize"
+# lock window `$ convert -scale 1920x1080 FILE_PATH ~/.lock_wallpaper.png`
+bindsym $super+l exec i3lock -t -i ~/.lock_wallpaper.png 
+#--image-fill 
+# reload i3
+bindsym $super+Shift+c reload
+# restart i3
+bindsym $super+Shift+r restart
+# exit i3
+bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# open [f]ile explorer
+bindsym $super+f exec nautilus
+# kill focused window
+bindsym $super+q kill
+# Print
+bindsym Print exec flameshot full 
+bindsym $super+shift+s exec flameshot gui
+# layouts
+bindsym $super+1 floating toggle
+bindsym $super+2 layout toggle split
+bindsym $super+3 layout stacking
+bindsym $super+4 layout tabbed
+# change focus
+bindsym $alt+h focus left 
+bindsym $alt+l focus right 
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+# alternatively, you can use the cursor keys:
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
+# move focused window
+bindsym $alt+Shift+h move left 
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
+
+# --------------------------------------------------------------------------------
+# workspaces | containers | assigns
+bindsym $alt+1 workspace number $ws1
+bindsym $alt+Shift+1 move container to workspace number $ws1
+
+bindsym $alt+2 workspace number $ws2
+bindsym $alt+Shift+2 move container to workspace number $ws2
+assign [class="kitty"] $ws2
+
+bindsym $alt+3 workspace number $ws3
+bindsym $alt+Shift+3 move container to workspace number $ws3
+
+bindsym $alt+4 workspace number $ws4
+bindsym $alt+Shift+4 move container to workspace number $ws4
+assign [class="Google-chrome" instance="discord.com__channels_@me"] $ws4
+
+bindsym $alt+5 workspace number $ws5
+bindsym $alt+Shift+5 move container to workspace number $ws5
+assign [class="Google-chrome" instance="calendar.google.com"] $ws5
+
+bindsym $alt+q workspace number $ws6
+bindsym $alt+Shift+q move container to workspace number $ws6
+assign [class="Google-chrome" instance="www.youtube.com"] $ws6
+
+bindsym $alt+w workspace number $ws7
+bindsym $alt+Shift+w move container to workspace number $ws7
+assign [class="OneNote"] $ws7
+
+bindsym $alt+e workspace number $ws8 
+bindsym $alt+Shift+e move container to workspace number $ws8
+assign [class="Postman"] $ws8  
+
+bindsym $alt+r workspace number $ws9 
+bindsym $alt+Shift+r move container to workspace number $ws9
+assign [class="figma-linux"] $ws9  
+
+bindsym $alt+t workspace number $ws10 
+bindsym $alt+Shift+t move container to workspace number $ws10
+assign [class="Google-chrome" instance="listen.tidal.com"] $ws10  
+
+# --------------------------------------------------------------------------------
+# THEME
+
+hide_edge_borders smart
+popup_during_fullscreen smart
+focus_on_window_activation smart
+smart_gaps on
+
+# class                 border     background foreground indicator  child border
+client.focused          $color05   #331100    #ffffff    $color05   $color05
+client.focused_inactive #333333    #5f676a    #ffffff    #484e50    #5f676a
+client.unfocused        #333333    #222222    #888888    #292d2e    #222222
+client.urgent           #2f343a    #900000    #ffffff    #900000    #900000
+client.placeholder      #000000    #0c0c0c    #ffffff    #000000    #0c0c0c
+client.background       $background
+
+focus_follows_mouse no
+
+force_xinerama yes
+
+# --------------------------------------------------------------------------------
+# MODES
+mode "$mode_launcher" {
+    bindsym w exec sh /home/alan/.rotines/work.sh 
+# chrome apps only
+    bindsym c exec google-chrome --profile-directory="Profile 1" --app='https://calendar.google.com'
+    bindsym d exec google-chrome --profile-directory="Profile 1" --app='https://discord.com/channels/@me' 
+    bindsym t exec google-chrome --profile-directory="Profile 1" --app='https://listen.tidal.com' 
+    bindsym y exec google-chrome --profile-directory=Default --app='https://www.youtube.com/'
+# -- 
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+mode "resize" {
+    # back to normal: Enter or Escape or $alt+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $super+r mode "default"
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+}
+
+bar {
+    font pango:Nunito semi-bold 9.5
+    # font pango:Terminus 11px
+    # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    # font pango:DejaVu Sans Mono 8 
+    i3bar_command i3bar --transparency
+    status_command i3status --config
+    position top
+    padding 6px 0
+    tray_padding 10px
+    separator_symbol " │ "
+    mode hide
+    hidden_state hide  
+    modifier Mod1
+    strip_workspace_numbers yes
+
+    colors {
+        background #44444488
+        statusline $color04
+        separator #ffffff88
+
+        # colors of the border, background, text
+        focused_workspace  $color01  $color03  $color02
+        active_workspace   #88888888 #000000cc #dddddd
+        inactive_workspace #ffffff22 #000000cc #888888
+        urgent_workspace   #555555   #000000cc #88ffff
+      } 
+}
+
+# --------------------------------------------------------------------------------
+# EXECUTIONS
+# exec ...
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- -i ~/.lock_wallpaper.png --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id hsetroot -fill ~/.wallpaper.jpg
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton -b
+
+# CHROME PERSONAL
+exec google-chrome --args --profile-directory=Default
+
+
+# KITTY TERMINAL
+exec /home/alan/.local/kitty.app/bin/kitty
+
+# ONE NOTE
+exec --no-startup-id onenote-desktop
+
+# GS CONNECT
+exec gapplication launch org.gnome.Shell.Extensions.GSConnect
+
+# DARK MODE
+exec gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+exec --no-startup-id /usr/libexec/gsd-xsettings 
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark' 
+
+# exec_always ...
+exec_always "xautolock -detectsleep -time 1 -locker \"i3lock -c ff00ff\""
+## here multimonitor config
+# $ xrandr --output eDP-1 --auto --left-of HDMI-1
+
+
+# https://askubuntu.com/questions/769417/how-to-change-global-dark-theme-on-and-off-through-terminal
+# <nothing>
+
+# --------------------------------------------------------------------------------
+# Window preference
+for_window [class="^.*"] border pixel 2
+# calculator
+for_window [class="gnome-calculator"] floating enable, resize set 500px 500px 
+# nautilus
+for_window [class="org.gnome.Nautilus"] floating enable, resize set 1000px 800px 
+
+# --------------------------------------------------------------------------------
+## HELPERS
+
+# hsetroot 
+# rxvt-unicode 
+# rofi 
+# fonts-noto 
+# fonts-mplus 
+# xsettingsd 
+# lxappearance 
+# viewnior
+# flameshot 
+# GUIDE: https://i3wm.org/docs/userguide.html 
+# GOOD REFERENCE https://gist.github.com/pfsmorigo/2635132 
+# FontAwesome https://fontawesome.com/download
+#    A                                                       
+#
+# - Compton é um compositor para fornecer alguns efeitos de desktop, 
+# como sombra, transparência, desvanecimento e transição.
+#
+# - Hsetroot é um gerenciador de papel de parede. O i3 não tem um 
+# gerenciador de papel de parede por padrão.
+#
+# - URxvt é um emulador de terminal leve, parte do i3-sensible-terminal.
+#
+# - Rofi é um iniciador de programas, semelhante ao dmenu, mas com mais opções.
+#
+# - Noto Sans e M+ são minhas fontes favoritas usadas na minha configuração.
+#
+# - Xsettingsd é um daemon de configurações simples para carregar o fontconfig
+# e algumas outras opções. Sem isso, as fontes pareceriam rasterizadas em algumas 
+# aplicações.
+#
+# - LXAppearance é usado para mudar o tema GTK, ícones, fontes e algumas outras 
+# preferências.

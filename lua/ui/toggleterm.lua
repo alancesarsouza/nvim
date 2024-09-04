@@ -12,7 +12,7 @@ M.after = function()
   end
 
   plugin.setup {
-    open_mapping = [[<a-i>]],
+    open_mapping = [[<M-i>]],
     direction = 'float',
     float_opts = {
       border = 'curved',

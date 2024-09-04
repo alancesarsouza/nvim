@@ -68,15 +68,15 @@ M.after = function()
     semantic_letters = true,
   }
 
-  vim.keymap.set('n', '<leader>1', '<Cmd> BufferGoto 1 <CR>', { desc = d.buff1 })
-  vim.keymap.set('n', '<leader>2', '<Cmd> BufferGoto 2 <CR>', { desc = d.buff2 })
-  vim.keymap.set('n', '<leader>3', '<Cmd> BufferGoto 3 <CR>', { desc = d.buff3 })
-  vim.keymap.set('n', '<leader>4', '<Cmd> BufferGoto 4 <CR>', { desc = d.buff4 })
-  vim.keymap.set('n', '<leader>5', '<Cmd> BufferGoto 5 <CR>', { desc = d.buff5 })
-  vim.keymap.set('n', '<leader>6', '<Cmd> BufferGoto 6 <CR>', { desc = d.buff6 })
-  vim.keymap.set('n', '<leader>7', '<Cmd> BufferGoto 7 <CR>', { desc = d.buff7 })
-  vim.keymap.set('n', '<leader>8', '<Cmd> BufferGoto 8 <CR>', { desc = d.buff8 })
-  vim.keymap.set('n', '<leader>9', '<Cmd> BufferGoto 9 <CR>', { desc = d.buff9 })
+  vim.keymap.set('n', '<M-1>', '<Cmd> BufferGoto 1 <CR>', { desc = d.buff1 })
+  vim.keymap.set('n', '<M-2>', '<Cmd> BufferGoto 2 <CR>', { desc = d.buff2 })
+  vim.keymap.set('n', '<M-3>', '<Cmd> BufferGoto 3 <CR>', { desc = d.buff3 })
+  vim.keymap.set('n', '<M-4>', '<Cmd> BufferGoto 4 <CR>', { desc = d.buff4 })
+  vim.keymap.set('n', '<M-5>', '<Cmd> BufferGoto 5 <CR>', { desc = d.buff5 })
+  vim.keymap.set('n', '<M-6>', '<Cmd> BufferGoto 6 <CR>', { desc = d.buff6 })
+  vim.keymap.set('n', '<M-7>', '<Cmd> BufferGoto 7 <CR>', { desc = d.buff7 })
+  vim.keymap.set('n', '<M-8>', '<Cmd> BufferGoto 8 <CR>', { desc = d.buff8 })
+  vim.keymap.set('n', '<M-9>', '<Cmd> BufferGoto 9 <CR>', { desc = d.buff9 })
 
   vim.keymap.set('n', '<leader>q', '<Cmd> BufferClose <CR>', { desc = d.q })
   vim.keymap.set('n', '<C-S-t>', '<Cmd> BufferRestore <CR>', { desc = d.q }) -- ubuntu terminal fucks
