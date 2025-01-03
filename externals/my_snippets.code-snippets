@@ -1,0 +1,32 @@
+{
+	"Arrow function": {
+		"prefix": "arr",
+		"body": [
+			"() => $1"
+		],
+		"description": "Create a arrow function"
+	},
+	"Use state": {
+		"prefix": "rus",
+		"body": [
+			"const [$1, set$1] = useState<$2 | null>(null)"
+		],
+		"description": "Create a use state hook"
+	},
+	"Use effect": {
+		"prefix": "rue",
+		"body": [
+			"useEffect(() => {",
+			"  console.log($1)",
+			"}, [])"
+		],
+		"description": "Create a use effect hook"
+	},
+	"Use memo": {
+		"prefix": "rum",
+		"body": [
+			"const $1 = useMemo(() => $2, [])"
+		],
+		"description": "Create a use memo hook"
+	}
+}

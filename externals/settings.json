@@ -1,0 +1,84 @@
+{
+  /* >>> Formatter */
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "explicit",
+  // },
+  // "editor.formatOnSave": true,
+  // "eslint.format.enable": true,
+  /* >>> Preferences */
+  "cSpell.language": "en,pt_PT",
+  "cSpell.userWords": [
+    "interco"
+  ],
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13, // 13
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.tabSize": 2,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.enableTrash": false,
+  "git.confirmSync": false,
+  "indentRainbow.colors": [
+    "#E06C75AA",
+    "#E5C07BAA",
+    "#61AFEFAA",
+    "#D19A66AA",
+    "#98C379AA",
+    "#C678DDAA",
+    "#56B6C2AA"
+  ],
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.updateDelay": 100,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "jest.runMode": "on-demand",
+  "terminal.integrated.fontSize": 14, // 14
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotion": true,
+  "vim.smartRelativeLine": true,
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "windowed",
+  "window.nativeFullScreen": true,
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": -1, // -1
+  "workbench.colorCustomizations": {
+    "editor.background": "#080808",
+    "statusBar.background": "#000000",
+    "editorRuler.foreground": "#fff2"
+  },
+  "workbench.colorTheme": "Bluloco Dark Italic",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.startupEditor": "none",
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": true,
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.restore": true,
+  "zenMode.showTabs": "multiple",
+  "zenMode.silentNotifications": false,
+  /* ^ zenMode.silentNotifications Testing */
+  "snippets": [
+    {
+      "language": "javascript",
+      "path": "./snippets/javascript.json"
+    }
+  ],
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.associations": {
+    "*.code-snippets": "jsonc"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.snippetSuggestions": "top"
+}
