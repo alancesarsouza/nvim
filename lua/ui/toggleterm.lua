@@ -12,7 +12,8 @@ M.after = function()
   end
 
   plugin.setup {
-    open_mapping = [[<M-i>]],
+    -- open_mapping = [[<A-i>]],
+    open_mapping = [[<D-i>]], -- mac keybind
     direction = 'float',
     float_opts = {
       border = 'curved',
