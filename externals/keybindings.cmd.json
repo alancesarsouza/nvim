@@ -1,0 +1,221 @@
+
+[
+  // =====================
+  // Navegação entre arquivos e editores
+  // =====================
+  { "key": "cmd+1", "command": "workbench.action.openEditorAtIndex1" },
+  { "key": "cmd+2", "command": "workbench.action.openEditorAtIndex2" },
+  { "key": "cmd+3", "command": "workbench.action.openEditorAtIndex3" },
+  { "key": "cmd+4", "command": "workbench.action.openEditorAtIndex4" },
+  { "key": "cmd+5", "command": "workbench.action.openEditorAtIndex5" },
+  { "key": "cmd+6", "command": "workbench.action.openEditorAtIndex6" },
+  { "key": "cmd+7", "command": "workbench.action.openEditorAtIndex7" },
+  { "key": "cmd+8", "command": "workbench.action.openEditorAtIndex8" },
+  { "key": "cmd+9", "command": "workbench.action.openEditorAtIndex9" },
+  { "key": "cmd+p", "command": "workbench.action.quickOpen" },
+  { "key": "cmd+shift+p", "command": "workbench.action.showCommands" },
+  { "key": "ctrl+g", "command": "workbench.action.gotoLine" },
+  { "key": "cmd+shift+o", "command": "workbench.action.gotoSymbol" },
+  { "key": "f12", "command": "editor.action.goToDeclaration" },
+  { "key": "shift+f12", "command": "editor.action.referenceSearch.trigger" },
+
+  // =====================
+  // Navegação entre grupos e painéies
+  // =====================
+  { "key": "ctrl+h", "command": "workbench.action.navigateLeft" },
+  { "key": "ctrl+j", "command": "workbench.action.navigateDown" },
+  { "key": "ctrl+k", "command": "workbench.action.navigateUp" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateRight" },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  { "key": "cmd+\\", "command": "workbench.action.splitEditor" },
+  { "key": "shift+cmd+\\", "command": "workbench.action.splitEditorDown" },
+  { "key": "shift+cmd+\\", "command": "workbench.action.splitEditorUp" },
+
+  // =====================
+  // Edição de texto
+  // =====================
+  { "key": "alt+down", "command": "editor.action.moveLinesDownAction" },
+  { "key": "alt+up", "command": "editor.action.moveLinesUpAction" },
+  { "key": "cmd+/", "command": "editor.action.commentLine" },
+  { "key": "cmd+d", "command": "editor.action.addSelectionToNextFindMatch" },
+  { "key": "cmd+ctrl+g", "command": "editor.action.selectHighlights" },
+  { "key": "ctrl+.", "command": "editor.action.triggerSuggest" },
+  {
+    "key": "ctrl+,",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  { "key": "f2", "command": "editor.action.rename" },
+  { "key": "shift+alt+down", "command": "editor.action.copyLinesDownAction" },
+  { "key": "shift+alt+up", "command": "editor.action.copyLinesUpAction" },
+  { "key": "shift+alt+f", "command": "editor.action.formatDocument" },
+  { "key": "cmd+z", "command": "undo" },
+  { "key": "shift+cmd+z", "command": "redo" },
+
+  // =====================
+  // Busca e substituição
+  // =====================
+  {
+    "key": "cmd+alt+f",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  { "key": "shift+cmd+s", "command": "filesExplorer.findInWorkspace" },
+
+  // =====================
+  // Terminal e painel
+  // =====================
+  { "key": "ctrl+`", "command": "workbench.action.terminal.toggleTerminal" },
+  { "key": "cmd+j", "command": "workbench.action.togglePanel" },
+  { "key": "cmd+i", "command": "workbench.action.toggleMaximizedPanel" },
+  { "key": "cmd+f", "command": "workbench.action.toggleEditorWidths" },
+  {
+    "key": "cmd+shift+f",
+    "command": "workbench.action.toggleZenMode",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  { "key": "ctrl+shift+j", "command": "workbench.action.increaseViewSize" },
+  { "key": "ctrl+shift+k", "command": "workbench.action.decreaseViewSize" },
+
+  // =====================
+  // Arquivos e Explorer
+  // =====================
+  { "key": "cmd+a", "command": "explorer.newFile" },
+  {
+    "key": "cmd+r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !inputFocus"
+  },
+  { "key": "cmd+w", "command": "workbench.action.closeActiveEditor" },
+  { "key": "cmd+k cmd+w", "command": "workbench.action.closeAllEditors" },
+  { "key": "ctrl+shift+q", "command": "workbench.action.closeWindow" },
+  { "key": "ctrl+shift+w", "command": "workbench.action.closeEditorsInGroup" },
+  { "key": "cmd+s", "command": "workbench.action.files.save" },
+  { "key": "cmd+alt+s", "command": "workbench.action.files.saveAll" },
+  { "key": "ctrl+s", "command": "workbench.action.files.save" },
+
+  // =====================
+  // Git e integração
+  // =====================
+  { "key": "cmd+enter", "command": "git.openFile" },
+  { "key": "cmd+s", "command": "git.stage" },
+  { "key": "shift+cmd+g", "command": "workbench.scm.focus" },
+  {
+    "key": "shift+cmd+i",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+
+  // =====================
+  // Interface e Sidebar
+  // =====================
+  { "key": "cmd+b", "command": "workbench.action.toggleSidebarVisibility" },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.focusSideBar",
+    "when": "!sideBarVisible"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible"
+  },
+
+  // =====================
+  // Atalhos desabilitados ou removidos
+  // =====================
+  { "key": "cmd+y", "command": "-aichat.newfollowupaction" },
+  {
+    "key": "cmd+n",
+    "command": "-composer.createNewWithPrevContext",
+    "when": "composerFocused || focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  { "key": "shift+cmd+l", "command": "-aichat.insertselectionintochat" },
+  {
+    "key": "cmd+l",
+    "command": "-aichat.newchataction"
+  },
+  // =====================
+  // TODO Ordernar
+  // =====================
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeAllGroups"
+  },
+  {
+    "key": "cmd+r shift+cmd+w",
+    "command": "-workbench.action.closeAllGroups"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "cmd+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "cmd+y",
+    "command": "-editor.action.inlineDiffs.acceptPartialEdit",
+    "when": "editorHasPromptBar && editorPromptBarFocused"
+  },
+  {
+    "key": "cmd+y",
+    "command": "-editor.action.inlineDiffs.acceptPartialEdit",
+    "when": "editorTextFocus && @inlineDiffs.acceptPartialEdit.isActiveEditorWithDiffs"
+  },
+  {
+    "key": "cmd+y",
+    "command": "editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "cmd+m",
+    "command": "markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  // fix remaps updates
+  {
+    "key": "shift+cmd+l",
+    "command": "-composer.newAgentChat"
+  }
+]
