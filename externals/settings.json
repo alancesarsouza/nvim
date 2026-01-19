@@ -1,60 +1,101 @@
 {
   /* >>> Formatter */
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": "explicit",
-  // },
-  // "editor.formatOnSave": true,
-  // "eslint.format.enable": true,
-  /* >>> Preferences */
-  "cSpell.language": "en,pt_PT",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "cSpell.language": "en,pt,pt_BR",
   "cSpell.userWords": [
-    "interco"
+    "curity",
+    "forex",
+    "interco",
+    "operacao",
+    "testid",
+    "xbadmin"
   ],
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.folding": false,
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13, // 13
+  "editor.fontSize": 14, //  Monitor:14 | Laptop:15
   "editor.inlineSuggest.showToolbar": "always",
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.quickSuggestionsDelay": 500,
+  "editor.rulers": [80, 120],
+  "editor.smoothScrolling": true,
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.enableTrash": false,
   "git.confirmSync": false,
+  "git.showActionButton": {
+    "commit": false,
+    "publish": false,
+    "sync": false
+  },
+  "git.showCommitInput": false,
   "indentRainbow.colors": [
-    "#E06C75AA",
-    "#E5C07BAA",
-    "#61AFEFAA",
-    "#D19A66AA",
-    "#98C379AA",
-    "#C678DDAA",
-    "#56B6C2AA"
+    "#98C379BB",
+    "#61AFEFBB",
+    "#D19A66BB",
+    "#56B6C2BB",
+    "#C678DDBB",
+    "#E5C07BBB",
+    "#E06C75BB"
   ],
   "indentRainbow.indicatorStyle": "light",
-  "indentRainbow.updateDelay": 100,
+  "indentRainbow.updateDelay": 400,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "jest.runMode": "on-demand",
-  "terminal.integrated.fontSize": 14, // 14
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.fontSize": 15, // Monitor: 15 | Laptop: 14
+  "typescript.updateImportsOnFileMove.enabled": "always", // please change me to "none"
   "vim.easymotion": true,
   "vim.smartRelativeLine": true,
-  "window.commandCenter": false,
-  "window.customTitleBarVisibility": "windowed",
+  "vim.statusBarColorControl": true, // true - it`s handle status color
+  "vim.statusBarColors.commandlineinprogress": ["#220044", "#ffaa00"],
+  "vim.statusBarColors.insert": ["#440088", "#999999"],
+  "vim.statusBarColors.searchinprogressmode": ["#220044", "#ffaa00"],
   "window.nativeFullScreen": true,
   "window.restoreFullscreen": true,
-  "window.zoomLevel": -1, // -1
+  "window.title": "${separator}${rootName}${separator}${profileName}",
+  "window.zoomLevel": -2, //  Monitor:-2 | Laptop:0
+
   "workbench.colorCustomizations": {
-    "editor.background": "#080808",
-    "statusBar.background": "#000000",
-    "editorRuler.foreground": "#fff2"
+    "breadcrumb.foreground": "#08a",
+    "editorGroupHeader.tabsBackground": "#111",
+    "editor.background": "#000",
+    "editorRuler.foreground": "#08a4",
+    "panel.background": "#000",
+    "panel.border": "#08a8",
+    "panelTitle.border": "#08a8",
+    "sideBar.background": "#111",
+    "sideBar.border": "#08a8",
+    "statusBar.background": "#005f5f",
+    "statusBar.border": "#08a8",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.debuggingForeground": "#ffffff",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.noFolderBackground": "#005f5f",
+    "tab.activeBackground": "#80f5",
+    "tab.activeBorder": "#fff0",
+    "tab.activeBorderTop": "#08a8",
+    "tab.border": "#fff1",
+    "tab.inactiveBackground": "#fff0",
+    "tab.selectedBorder": "#80f",
+    "tab.unfocusedActiveBackground": "#80f3",
+    "tab.unfocusedActiveBorderTop": "#08a4",
+    "titleBar.activeForeground": "#888844",
+    "titleBar.border": "#424"
   },
   "workbench.colorTheme": "Bluloco Dark Italic",
-  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "zenMode.centerLayout": false,
   "zenMode.fullScreen": true,
@@ -64,21 +105,5 @@
   "zenMode.restore": true,
   "zenMode.showTabs": "multiple",
   "zenMode.silentNotifications": false,
-  /* ^ zenMode.silentNotifications Testing */
-  "snippets": [
-    {
-      "language": "javascript",
-      "path": "./snippets/javascript.json"
-    }
-  ],
-  "[snippets]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "files.associations": {
-    "*.code-snippets": "jsonc"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.snippetSuggestions": "top"
+  "diffEditor.maxComputationTime": 0 // below this is test
 }
